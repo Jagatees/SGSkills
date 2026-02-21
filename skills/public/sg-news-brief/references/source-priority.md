@@ -33,3 +33,5 @@ Use only when they materially add context to Singapore impact (markets, geopolit
 - Avoid unverified social media claims as primary evidence.
 - Avoid repeating rumors unless clearly labeled as unconfirmed.
 - Prefer direct links to article pages or official statements, not aggregator reposts.
+- Do not use a Tier 2 or Tier 3 outlet alone for legal status or policy-effective-date claims.
+- If a primary source and newsroom report disagree, prefer the primary source and label uncertainty.
