@@ -1,6 +1,6 @@
-# Cross-Platform Skill Ports: SG News Brief
+# Cross-Platform Skill Ports
 
-This folder contains portable variants of `sg-news-brief` for different AI tools.
+This folder contains portable variants and install helpers for the Singapore skills collection.
 
 ## Quick Install (recommended)
 
@@ -8,78 +8,65 @@ From repo root:
 
 ```bash
 chmod +x ports/install.sh
-./ports/install.sh <target>
+./ports/install.sh <target> [destination] [skill]
 ```
 
 Targets:
+
 - `codex`
 - `claude`
 - `gemini`
 - `universal`
 
-Optional destination for `claude`, `gemini`, `universal`:
+Notes:
+
+- `destination` is optional for `claude`, `gemini`, and `universal` (defaults to current directory).
+- `skill` is optional for `codex` (defaults to `all`).
+
+Examples:
 
 ```bash
+./ports/install.sh codex
+./ports/install.sh codex . sg-open-data-storyteller
 ./ports/install.sh claude ~/my-project
 ./ports/install.sh gemini ~/my-project
 ./ports/install.sh universal ~/Desktop
 ```
 
-## 1) Codex
+## Codex
 
-Install:
+Install all skills:
 
 ```bash
-mkdir -p ~/.codex/skills
-cp -R skills/public/sg-news-brief ~/.codex/skills/
+./ports/install.sh codex
 ```
 
-Restart Codex, then use:
+Install one skill:
+
+```bash
+./ports/install.sh codex . sg-news-brief
+./ports/install.sh codex . sg-open-data-storyteller
+```
+
+Use in Codex:
 
 - `Use $sg-news-brief and give me a Singapore news brief for the last 24 hours.`
+- `Use $sg-open-data-storyteller on <data.gov.sg link> and give me a standard brief for policy teams.`
 
-## 2) Claude Code
+## Claude / Gemini / Universal
 
-Copy command file:
+Current command templates in this folder are examples centered on `sg-news-brief`.
 
-```bash
-mkdir -p .claude/commands
-cp ports/claude/.claude/commands/sg-news-brief.md .claude/commands/
-```
+If you need cross-platform adapters for `sg-open-data-storyteller`, add equivalent command files under:
 
-Run in Claude Code:
-
-- `/sg-news-brief last 24 hours, audience=founders/SMEs, standard length`
-
-## 3) Gemini CLI
-
-Copy command file:
-
-```bash
-mkdir -p .gemini/commands
-cp ports/gemini/.gemini/commands/sg-news-brief.toml .gemini/commands/
-```
-
-Run in Gemini CLI:
-
-- `/sg-news-brief last 24 hours audience=public length=standard`
-
-## 4) Any Other AI (universal)
-
-Use:
-
-- `ports/universal/sg-news-brief-prompt.md`
-
-Paste it as a prompt template in ChatGPT, Perplexity, Claude web, Gemini web, etc.
-
-## Notes
-
-- Skill/command formats are platform-specific; each adapter here mirrors the same v2 behavior.
-- Update the source skill first (`skills/public/sg-news-brief`) and then sync changes into these adapters.
+- `ports/claude/.claude/commands/`
+- `ports/gemini/.gemini/commands/`
+- `ports/universal/`
 
 ## What to send friends
 
-Share this repo URL and tell them:
+Share this repo URL and ask them to:
+
 1. Clone or download the repo.
 2. `cd` into repo root.
-3. Run `./ports/install.sh <their-platform>`.
+3. Run `./ports/install.sh codex` for Codex, or the relevant target for their tool.

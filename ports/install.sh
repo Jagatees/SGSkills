@@ -5,39 +5,63 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(cd "${SCRIPT_DIR}/.." && pwd)"
 
 usage() {
-  cat <<'EOF'
+  cat <<'USAGE'
 Usage:
-  ./ports/install.sh <target> [destination]
+  ./ports/install.sh <target> [destination] [skill]
 
 Targets:
-  codex      Install sg-news-brief into ~/.codex/skills
+  codex      Install one skill (or all skills) into ~/.codex/skills
   claude     Install command into <destination>/.claude/commands (default: current directory)
   gemini     Install command into <destination>/.gemini/commands (default: current directory)
   universal  Copy universal prompt into <destination> (default: current directory)
 
+Arguments:
+  destination   Optional for claude/gemini/universal (defaults to current directory)
+  skill         Optional for codex. One of:
+                - sg-news-brief
+                - sg-open-data-storyteller
+                - all (default)
+
 Examples:
   ./ports/install.sh codex
+  ./ports/install.sh codex . sg-news-brief
+  ./ports/install.sh codex . sg-open-data-storyteller
   ./ports/install.sh claude ~/my-project
   ./ports/install.sh gemini ~/my-project
   ./ports/install.sh universal ~/Desktop
-EOF
+USAGE
 }
 
-if [[ $# -lt 1 ]] || [[ $# -gt 2 ]]; then
+if [[ $# -lt 1 ]] || [[ $# -gt 3 ]]; then
   usage
   exit 1
 fi
 
 target="$1"
 destination="${2:-$PWD}"
+skill="${3:-all}"
 
 install_codex() {
-  local src="${REPO_ROOT}/skills/public/sg-news-brief"
   local dst="${HOME}/.codex/skills"
   mkdir -p "${dst}"
-  cp -R "${src}" "${dst}/"
-  echo "Installed Codex skill to: ${dst}/sg-news-brief"
-  echo "Next: restart Codex and run: Use \$sg-news-brief and give me a Singapore news brief for the last 24 hours."
+
+  case "${skill}" in
+    all)
+      cp -R "${REPO_ROOT}/skills/public/." "${dst}/"
+      echo "Installed all Codex skills to: ${dst}"
+      ;;
+    sg-news-brief|sg-open-data-storyteller)
+      cp -R "${REPO_ROOT}/skills/public/${skill}" "${dst}/"
+      echo "Installed Codex skill to: ${dst}/${skill}"
+      ;;
+    *)
+      echo "Unknown skill for codex: ${skill}"
+      echo "Valid options: sg-news-brief, sg-open-data-storyteller, all"
+      exit 1
+      ;;
+  esac
+
+  echo "Next: restart Codex and run a prompt like: Use \$${skill} ..."
 }
 
 install_claude() {
