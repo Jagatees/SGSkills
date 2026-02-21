@@ -8,10 +8,12 @@ description: Create concise Singapore news digests with source links and categor
 ## Overview
 
 Use this skill to produce short, trustworthy Singapore news briefings for daily or weekly updates. Prioritize factual accuracy, source transparency, and clear implications for Singapore readers.
+Current release target: v2 checklist with confidence scoring and strict sourcing.
 
 Read `references/source-priority.md` before collecting stories.
 Use `references/audience-modes.md` to match tone and section emphasis by audience.
 Use `references/sample-brief.md` as a formatting baseline.
+Use `references/friend-test-checklist.md` for repeatable QA runs.
 
 ## Workflow
 
@@ -43,12 +45,21 @@ For each story capture:
 ### 3. Verify before writing
 
 Apply these checks:
-- Keep only stories with at least one reputable source link.
+- Enforce hard gate: if no credible source URL is available, exclude the story.
 - Prefer stories with direct primary statements where possible.
 - Use absolute dates (for example: `February 21, 2026`) instead of only relative labels like "today."
 - If facts conflict across outlets, state uncertainty briefly and cite both.
+- Assign confidence per story using the rubric below.
 
 Do not present speculation as confirmed fact.
+
+### 3a. Confidence rubric
+
+- High: direct official source or multiple reputable sources that agree on core facts.
+- Medium: one reputable source with clear reporting but limited corroboration.
+- Low: incomplete verification, conflicting details, or indirect sourcing.
+
+Low-confidence items can appear only in `Watchlist` and must be labeled clearly.
 
 ### 4. Categorize and rank
 
@@ -73,6 +84,8 @@ Use this format:
 # Singapore News Brief
 Period: <start date> to <end date>
 Updated: <timestamp with timezone>
+Data freshness: <when sources were checked>
+Skill version: <v2>
 
 ## Top Headlines
 1. <headline> - <one-line why it matters>
@@ -81,6 +94,7 @@ Updated: <timestamp with timezone>
 ## By Category
 ### <category>
 - <headline> (<source>, <publish date>): <2-3 sentence summary>
+  - Confidence: <High|Medium|Low>
   - Why it matters: <1 sentence>
   - Source: <url>
 
@@ -96,8 +110,9 @@ Updated: <timestamp with timezone>
 - Keep tone neutral and concise.
 - Avoid duplicate stories across categories.
 - Separate facts from interpretation.
-- Include source links for every item.
+- Include source links for every included story.
 - End with a short "watch next" view when relevant.
+- Never include an uncited claim as a confirmed fact.
 
 ## Audience modes
 
