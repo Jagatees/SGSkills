@@ -3,83 +3,102 @@ name: sg-news-brief
 description: Create concise Singapore news digests with source links and category grouping. Use when users ask for Singapore news summaries, policy/event roundups, or daily/weekly briefings.
 ---
 
-# Sg News Brief
+# SG News Brief
 
 ## Overview
 
-[TODO: 1-2 sentences explaining what this skill enables]
+Use this skill to produce short, trustworthy Singapore news briefings for daily or weekly updates. Prioritize factual accuracy, source transparency, and clear implications for Singapore readers.
 
-## Structuring This Skill
+Read `references/source-priority.md` before collecting stories.
 
-[TODO: Choose the structure that best fits this skill's purpose. Common patterns:
+## Workflow
 
-**1. Workflow-Based** (best for sequential processes)
-- Works well when there are clear step-by-step procedures
-- Example: DOCX skill with "Workflow Decision Tree" -> "Reading" -> "Creating" -> "Editing"
-- Structure: ## Overview -> ## Workflow Decision Tree -> ## Step 1 -> ## Step 2...
+### 1. Confirm brief scope
 
-**2. Task-Based** (best for tool collections)
-- Works well when the skill offers different operations/capabilities
-- Example: PDF skill with "Quick Start" -> "Merge PDFs" -> "Split PDFs" -> "Extract Text"
-- Structure: ## Overview -> ## Quick Start -> ## Task Category 1 -> ## Task Category 2...
+Collect or infer:
+- Time window: today, last 24 hours, last 7 days, or custom dates.
+- Topics: policy, transport, housing, business, technology, health, education, security, sports, or general.
+- Audience: public readers, founders/SMEs, investors, students, or internal teams.
+- Output length: quick (3-5 items), standard (6-10 items), or deep (10+ items).
 
-**3. Reference/Guidelines** (best for standards or specifications)
-- Works well for brand guidelines, coding standards, or requirements
-- Example: Brand styling with "Brand Guidelines" -> "Colors" -> "Typography" -> "Features"
-- Structure: ## Overview -> ## Guidelines -> ## Specifications -> ## Usage...
+If user intent is unclear, default to:
+- Last 24 hours
+- General Singapore news
+- Standard length
 
-**4. Capabilities-Based** (best for integrated systems)
-- Works well when the skill provides multiple interrelated features
-- Example: Product Management with "Core Capabilities" -> numbered capability list
-- Structure: ## Overview -> ## Core Capabilities -> ### 1. Feature -> ### 2. Feature...
+### 2. Gather candidate stories
 
-Patterns can be mixed and matched as needed. Most skills combine patterns (e.g., start with task-based, add workflow for complex operations).
+Use high-trust Singapore-first sources first. Include regional/global outlets only when they add important context for Singapore.
 
-Delete this entire "Structuring This Skill" section when done - it's just guidance.]
+For each story capture:
+- Headline
+- Event date
+- Publish date
+- Source name
+- URL
+- 1-2 sentence summary
 
-## [TODO: Replace with the first main section based on chosen structure]
+### 3. Verify before writing
 
-[TODO: Add content here. See examples in existing skills:
-- Code samples for technical skills
-- Decision trees for complex workflows
-- Concrete examples with realistic user requests
-- References to scripts/templates/references as needed]
+Apply these checks:
+- Keep only stories with at least one reputable source link.
+- Prefer stories with direct primary statements where possible.
+- Use absolute dates (for example: `February 21, 2026`) instead of only relative labels like "today."
+- If facts conflict across outlets, state uncertainty briefly and cite both.
 
-## Resources (optional)
+Do not present speculation as confirmed fact.
 
-Create only the resource directories this skill actually needs. Delete this section if no resources are required.
+### 4. Categorize and rank
 
-### scripts/
-Executable code (Python/Bash/etc.) that can be run directly to perform specific operations.
+Group stories into categories that matter for Singapore users:
+- Public policy and government
+- Economy and business
+- Transport and infrastructure
+- Housing and cost of living
+- Society, education, and health
+- Technology and cybersecurity
 
-**Examples from other skills:**
-- PDF skill: `fill_fillable_fields.py`, `extract_form_field_info.py` - utilities for PDF manipulation
-- DOCX skill: `document.py`, `utilities.py` - Python modules for document processing
+Rank within each category by:
+- Impact on people in Singapore
+- Timeliness
+- Reliability of sourcing
 
-**Appropriate for:** Python scripts, shell scripts, or any executable code that performs automation, data processing, or specific operations.
+### 5. Produce the brief
 
-**Note:** Scripts may be executed without loading into context, but can still be read by Codex for patching or environment adjustments.
+Use this format:
 
-### references/
-Documentation and reference material intended to be loaded into context to inform Codex's process and thinking.
+```markdown
+# Singapore News Brief
+Period: <start date> to <end date>
+Updated: <timestamp with timezone>
 
-**Examples from other skills:**
-- Product management: `communication.md`, `context_building.md` - detailed workflow guides
-- BigQuery: API reference documentation and query examples
-- Finance: Schema documentation, company policies
+## Top Headlines
+1. <headline> - <one-line why it matters>
+2. ...
 
-**Appropriate for:** In-depth documentation, API references, database schemas, comprehensive guides, or any detailed information that Codex should reference while working.
+## By Category
+### <category>
+- <headline> (<source>, <publish date>): <2-3 sentence summary>
+  - Why it matters: <1 sentence>
+  - Source: <url>
 
-### assets/
-Files not intended to be loaded into context, but rather used within the output Codex produces.
+## Watchlist
+- <emerging issue to monitor next update>
 
-**Examples from other skills:**
-- Brand styling: PowerPoint template files (.pptx), logo files
-- Frontend builder: HTML/React boilerplate project directories
-- Typography: Font files (.ttf, .woff2)
+## Notes
+- Coverage limits or uncertainty notes (if any).
+```
 
-**Appropriate for:** Templates, boilerplate code, document templates, images, icons, fonts, or any files meant to be copied or used in the final output.
+## Quality Bar
 
----
+- Keep tone neutral and concise.
+- Avoid duplicate stories across categories.
+- Separate facts from interpretation.
+- Include source links for every item.
+- End with a short "watch next" view when relevant.
 
-**Not every skill requires all three types of resources.**
+## Reusable prompts
+
+- "Give me a Singapore news brief for the last 24 hours, standard length."
+- "Summarize Singapore policy and business news for this week for SME founders."
+- "Create a housing and transport focused Singapore brief with only high-confidence items."
