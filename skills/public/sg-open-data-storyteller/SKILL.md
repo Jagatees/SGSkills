@@ -30,6 +30,32 @@ Defaults when unclear:
 - Audience: public
 - Standard depth
 
+### 1.5 Retrieve data reliably (data.gov.sg API playbook)
+
+Use this order to avoid flaky runs:
+- Prefer `datastore_search_sql` for aggregates (fewer calls, easier to cite).
+- Use `datastore_search` only when row-level records are needed.
+- Use one API call per command (avoid multi-step chained shell commands).
+
+Primary endpoints:
+- Metadata/page context: `https://data.gov.sg/datasets/<dataset_id>/view`
+- Row API: `https://data.gov.sg/api/action/datastore_search?resource_id=<dataset_id>&limit=<n>&offset=<m>`
+- SQL API: `https://data.gov.sg/api/action/datastore_search_sql?sql=<url_encoded_sql>`
+
+Rate-limit and access handling:
+- If API returns `TOO_MANY_REQUESTS` (code `24`), wait 10-12 seconds and retry once.
+- If still blocked, switch to `datastore_search_sql` with narrower queries.
+- If network/permission constraints block direct API calls, use the dataset page to capture:
+  - Latest date coverage
+  - Last updated timestamp
+  - Visible field names and sample rows
+  Then reduce confidence and state the limitation explicitly.
+
+Pagination and completeness:
+- Check `result.total`, `result.limit`, and `result._links.next`.
+- For full extracts, iterate offsets until all rows are collected.
+- Record row counts used in analysis (for reproducibility).
+
 ### 2. Profile data before analysis
 
 For each dataset:
