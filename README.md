@@ -66,6 +66,17 @@ Restart Codex after install.
 
 See `ports/README.md` for using prompt ports in other tools.
 
+## Documentation
+
+- `ARCHITECTURE.md`
+- `CONTRIBUTING.md`
+- `docs/SKILL_SPEC.md`
+- `docs/OPERATIONS.md`
+- `docs/PORTABILITY.md`
+- `docs/ROADMAP.md`
+- `docs/CHANGELOG.md`
+- `templates/` for starter files when creating new skills
+
 ## Roadmap
 
 Planned additions include:

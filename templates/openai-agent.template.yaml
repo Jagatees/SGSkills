@@ -1,0 +1,4 @@
+interface:
+  display_name: "<Skill Display Name>"
+  short_description: "<Short one-line value>"
+  default_prompt: "<Default prompt users can run>"

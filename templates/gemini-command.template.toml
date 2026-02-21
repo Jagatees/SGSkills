@@ -1,0 +1,7 @@
+description = "<Command description>"
+prompt = """
+<Prompt body>
+
+User arguments: {{args}}
+Treat arguments as scope preferences.
+"""
