@@ -17,18 +17,18 @@ Targets:
 
 Arguments:
   destination   Optional for claude/gemini/universal (defaults to current directory)
-  skill         Optional for codex. One of:
+  skill         Optional. One of:
                 - sg-news-brief
                 - sg-open-data-storyteller
-                - all (default)
+                - all (codex target only; default for codex)
 
 Examples:
   ./ports/install.sh codex
   ./ports/install.sh codex . sg-news-brief
   ./ports/install.sh codex . sg-open-data-storyteller
-  ./ports/install.sh claude ~/my-project
-  ./ports/install.sh gemini ~/my-project
-  ./ports/install.sh universal ~/Desktop
+  ./ports/install.sh claude ~/my-project sg-open-data-storyteller
+  ./ports/install.sh gemini ~/my-project sg-open-data-storyteller
+  ./ports/install.sh universal ~/Desktop sg-open-data-storyteller
 USAGE
 }
 
@@ -39,7 +39,15 @@ fi
 
 target="$1"
 destination="${2:-$PWD}"
-skill="${3:-all}"
+skill="${3:-}"
+
+if [[ -z "${skill}" ]]; then
+  if [[ "${target}" == "codex" ]]; then
+    skill="all"
+  else
+    skill="sg-news-brief"
+  fi
+fi
 
 install_codex() {
   local dst="${HOME}/.codex/skills"
@@ -65,29 +73,80 @@ install_codex() {
 }
 
 install_claude() {
-  local src="${SCRIPT_DIR}/claude/.claude/commands/sg-news-brief.md"
+  local src=""
+  local out=""
+  case "${skill}" in
+    sg-news-brief)
+      src="${SCRIPT_DIR}/claude/.claude/commands/sg-news-brief.md"
+      out="sg-news-brief.md"
+      ;;
+    sg-open-data-storyteller)
+      src="${SCRIPT_DIR}/claude/.claude/commands/sg-open-data-storyteller.md"
+      out="sg-open-data-storyteller.md"
+      ;;
+    *)
+      echo "Unknown skill for claude: ${skill}"
+      echo "Valid options: sg-news-brief, sg-open-data-storyteller"
+      exit 1
+      ;;
+  esac
+
   local dst="${destination}/.claude/commands"
   mkdir -p "${dst}"
-  cp "${src}" "${dst}/sg-news-brief.md"
-  echo "Installed Claude command to: ${dst}/sg-news-brief.md"
-  echo "Next: in Claude Code, run: /sg-news-brief last 24 hours audience=founders/SMEs length=standard"
+  cp "${src}" "${dst}/${out}"
+  echo "Installed Claude command to: ${dst}/${out}"
+  echo "Next: in Claude Code, run: /${out%.md} <your arguments>"
 }
 
 install_gemini() {
-  local src="${SCRIPT_DIR}/gemini/.gemini/commands/sg-news-brief.toml"
+  local src=""
+  local out=""
+  case "${skill}" in
+    sg-news-brief)
+      src="${SCRIPT_DIR}/gemini/.gemini/commands/sg-news-brief.toml"
+      out="sg-news-brief.toml"
+      ;;
+    sg-open-data-storyteller)
+      src="${SCRIPT_DIR}/gemini/.gemini/commands/sg-open-data-storyteller.toml"
+      out="sg-open-data-storyteller.toml"
+      ;;
+    *)
+      echo "Unknown skill for gemini: ${skill}"
+      echo "Valid options: sg-news-brief, sg-open-data-storyteller"
+      exit 1
+      ;;
+  esac
+
   local dst="${destination}/.gemini/commands"
   mkdir -p "${dst}"
-  cp "${src}" "${dst}/sg-news-brief.toml"
-  echo "Installed Gemini command to: ${dst}/sg-news-brief.toml"
-  echo "Next: in Gemini CLI, run: /sg-news-brief last 24 hours audience=public length=standard"
+  cp "${src}" "${dst}/${out}"
+  echo "Installed Gemini command to: ${dst}/${out}"
+  echo "Next: in Gemini CLI, run: /${out%.toml} <your arguments>"
 }
 
 install_universal() {
-  local src="${SCRIPT_DIR}/universal/sg-news-brief-prompt.md"
+  local src=""
+  local out=""
+  case "${skill}" in
+    sg-news-brief)
+      src="${SCRIPT_DIR}/universal/sg-news-brief-prompt.md"
+      out="sg-news-brief-prompt.md"
+      ;;
+    sg-open-data-storyteller)
+      src="${SCRIPT_DIR}/universal/sg-open-data-storyteller-prompt.md"
+      out="sg-open-data-storyteller-prompt.md"
+      ;;
+    *)
+      echo "Unknown skill for universal: ${skill}"
+      echo "Valid options: sg-news-brief, sg-open-data-storyteller"
+      exit 1
+      ;;
+  esac
+
   local dst="${destination}"
   mkdir -p "${dst}"
-  cp "${src}" "${dst}/sg-news-brief-prompt.md"
-  echo "Copied universal prompt to: ${dst}/sg-news-brief-prompt.md"
+  cp "${src}" "${dst}/${out}"
+  echo "Copied universal prompt to: ${dst}/${out}"
   echo "Next: open the file and paste the template into your AI tool."
 }
 

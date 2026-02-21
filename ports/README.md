@@ -28,9 +28,12 @@ Examples:
 ```bash
 ./ports/install.sh codex
 ./ports/install.sh codex . sg-open-data-storyteller
-./ports/install.sh claude ~/my-project
-./ports/install.sh gemini ~/my-project
-./ports/install.sh universal ~/Desktop
+./ports/install.sh claude ~/my-project sg-news-brief
+./ports/install.sh claude ~/my-project sg-open-data-storyteller
+./ports/install.sh gemini ~/my-project sg-news-brief
+./ports/install.sh gemini ~/my-project sg-open-data-storyteller
+./ports/install.sh universal ~/Desktop sg-news-brief
+./ports/install.sh universal ~/Desktop sg-open-data-storyteller
 ```
 
 ## Codex
@@ -55,13 +58,23 @@ Use in Codex:
 
 ## Claude / Gemini / Universal
 
-Current command templates in this folder are examples centered on `sg-news-brief`.
+Supported skills for these targets:
 
-If you need cross-platform adapters for `sg-open-data-storyteller`, add equivalent command files under:
+- `sg-news-brief`
+- `sg-open-data-storyteller`
 
-- `ports/claude/.claude/commands/`
-- `ports/gemini/.gemini/commands/`
-- `ports/universal/`
+Install one skill:
+
+```bash
+./ports/install.sh claude ~/my-project sg-news-brief
+./ports/install.sh claude ~/my-project sg-open-data-storyteller
+
+./ports/install.sh gemini ~/my-project sg-news-brief
+./ports/install.sh gemini ~/my-project sg-open-data-storyteller
+
+./ports/install.sh universal ~/Desktop sg-news-brief
+./ports/install.sh universal ~/Desktop sg-open-data-storyteller
+```
 
 ## What to send friends
 
