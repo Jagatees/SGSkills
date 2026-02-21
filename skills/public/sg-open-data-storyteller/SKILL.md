@@ -14,6 +14,7 @@ Read `references/insight-rubric.md` for ranking logic.
 Use `references/output-template.md` for response format.
 Run `references/qa-checklist.md` before final output.
 Use `references/api-query-recipes.md` to keep API calls minimal.
+Use `references/ops-checklist.md` for caching, telemetry, and quota-safe operations.
 
 ## Workflow
 
@@ -32,6 +33,12 @@ Defaults when unclear:
   - Monthly/weekly/daily datasets: last 12 months
 - Audience: public
 - Standard depth
+- Run mode: `fast`
+
+Run modes:
+- `fast` (default): 3-5 insights, SQL-first, target <=6 API calls, no exhaustive row extraction.
+- `deep`: 8+ insights, may use limited row-level calls after aggregates, target <=10 API calls.
+- If user requests deep mode, warn that rate-limit risk is higher.
 
 ### 1.5 Retrieve data reliably (data.gov.sg API playbook)
 
@@ -40,6 +47,7 @@ Use this order to avoid flaky runs:
 - Use `datastore_search` only when row-level records are needed.
 - Use one API call per command (avoid multi-step chained shell commands).
 - Start with metadata + 2-4 aggregate SQL calls; avoid full-table extraction by default.
+- Before calling APIs, check if valid cached results exist for the same dataset + query.
 
 Primary endpoints:
 - Metadata/page context: `https://data.gov.sg/datasets/<dataset_id>/view`
@@ -54,19 +62,29 @@ Rate-limit and access handling:
   - Backoff: 10s, then 20s
   - If still blocked, stop and report partial/unavailable coverage explicitly.
 - Enforce call budget to prevent runaway retries:
-  - Target budget: <=6 total API calls per dataset for a standard brief
-  - Hard cap: 10 calls; after cap, stop fetching and publish with explicit data-limit caveat
+  - Fast mode target: <=6 total API calls per dataset
+  - Deep mode target: <=10 total API calls per dataset
+  - Hard cap: 12 calls in any mode; after cap, stop fetching and publish with explicit data-limit caveat
 - If network/permission constraints block direct API calls, use the dataset page to capture:
   - Latest date coverage
   - Last updated timestamp
   - Visible field names and sample rows
   Then reduce confidence and state the limitation explicitly.
+- If an API key is available, prefer authenticated requests for higher and more stable quotas.
 
 Pagination and completeness:
 - Check `result.total`, `result.limit`, and `result._links.next`.
 - For full extracts, iterate offsets only when essential to answer the user request.
 - Record row counts used in analysis (for reproducibility).
 - Prefer publishing high-confidence aggregate insights over failing on exhaustive extraction.
+
+Caching policy:
+- Cache reusable responses for metadata and common aggregate queries.
+- Suggested cache TTLs:
+  - Metadata/profile calls: 24 hours
+  - Aggregate trend queries: 6 hours
+  - Row-level detail queries: 1 hour
+- If cache is used, include cache timestamp in internal notes and keep source URL unchanged.
 
 ### 2. Profile data before analysis
 
