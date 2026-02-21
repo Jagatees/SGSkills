@@ -10,6 +10,8 @@ description: Create concise Singapore news digests with source links and categor
 Use this skill to produce short, trustworthy Singapore news briefings for daily or weekly updates. Prioritize factual accuracy, source transparency, and clear implications for Singapore readers.
 
 Read `references/source-priority.md` before collecting stories.
+Use `references/audience-modes.md` to match tone and section emphasis by audience.
+Use `references/sample-brief.md` as a formatting baseline.
 
 ## Workflow
 
@@ -96,6 +98,15 @@ Updated: <timestamp with timezone>
 - Separate facts from interpretation.
 - Include source links for every item.
 - End with a short "watch next" view when relevant.
+
+## Audience modes
+
+Apply one mode unless user asks for mixed audience:
+- Public readers: plain language, low jargon, broader social impact.
+- Founders/SMEs: business impact, compliance implications, operational next steps.
+- Investors: market-sensitive updates, policy signals, sector implications.
+- Students: definitions first, context before impact, shorter summaries.
+- Internal teams: decision-focused summaries, explicit risks and actions.
 
 ## Reusable prompts
 
