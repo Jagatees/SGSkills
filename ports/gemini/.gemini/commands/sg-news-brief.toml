@@ -1,0 +1,42 @@
+description = "Create a Singapore news brief with strict sourcing and confidence labels"
+prompt = """
+Create a Singapore news brief.
+
+User arguments: {{args}}
+Treat arguments as scope preferences (time window, audience, topics, length).
+If unclear, default to last 24 hours, general Singapore news, standard length (6-10 items).
+
+Workflow:
+1. Gather stories from high-trust Singapore-first sources.
+2. Enforce hard gate: if no credible source URL exists, exclude the story.
+3. Use absolute dates (example: February 21, 2026).
+4. Assign confidence per story:
+   - High: official source or multiple reputable sources agree.
+   - Medium: one reputable source with clear reporting.
+   - Low: incomplete/conflicting verification.
+5. Keep low-confidence items only in Watchlist.
+
+Output format:
+# Singapore News Brief
+Period: <start date> to <end date>
+Updated: <timestamp with timezone>
+Data freshness: <when sources were checked>
+Skill version: v2
+
+## Top Headlines
+1. <headline> - <one-line why it matters>
+2. ...
+
+## By Category
+### <category>
+- <headline> (<source>, <publish date>): <2-3 sentence summary>
+  - Confidence: <High|Medium|Low>
+  - Why it matters: <1 sentence>
+  - Source: <url>
+
+## Watchlist
+- <emerging issue or low-confidence item>
+
+## Notes
+- Coverage limits or uncertainty notes.
+"""
