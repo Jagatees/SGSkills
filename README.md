@@ -18,6 +18,7 @@ Most generic AI prompts miss Singapore-specific context and source reliability n
 All public skills live under `skills/public/`.
 
 Examples currently included:
+- `sg-govtech-announcement-scanner`
 - `sg-news-brief`
 - `sg-open-data-storyteller`
 
@@ -59,6 +60,7 @@ Restart Codex after install.
 
 ## Example prompts
 
+- `Use $sg-govtech-announcement-scanner for the last 7 days and show change type + impact + source links.`
 - `Use $sg-news-brief and give me a Singapore news brief for the last 24 hours.`
 - `Use $sg-open-data-storyteller on https://data.gov.sg/datasets?topics=education&resultId=d_3c55210de27fcccda2ed0c63fdd2b352 and give me a standard brief for policy teams.`
 

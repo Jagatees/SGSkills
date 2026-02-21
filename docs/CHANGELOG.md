@@ -2,6 +2,12 @@
 
 ## 2026-02-21
 
+### sg-govtech-announcement-scanner
+
+- Added new lane skill to scan GovTech/OGP/agency announcement pages.
+- Added structured extraction contract (headline, date, change type, impact, confidence, source).
+- Added output template, QA checklist, and source map references.
+- Added Codex agent metadata and default prompt.
 ### sg-open-data-storyteller
 
 - Added API reliability playbook and SQL-first guidance.
