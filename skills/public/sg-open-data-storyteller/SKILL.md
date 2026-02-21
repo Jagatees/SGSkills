@@ -13,6 +13,7 @@ Focus on evidence, public impact, and transparent caveats.
 Read `references/insight-rubric.md` for ranking logic.
 Use `references/output-template.md` for response format.
 Run `references/qa-checklist.md` before final output.
+Use `references/api-query-recipes.md` to keep API calls minimal.
 
 ## Workflow
 
@@ -38,6 +39,7 @@ Use this order to avoid flaky runs:
 - Prefer `datastore_search_sql` for aggregates (fewer calls, easier to cite).
 - Use `datastore_search` only when row-level records are needed.
 - Use one API call per command (avoid multi-step chained shell commands).
+- Start with metadata + 2-4 aggregate SQL calls; avoid full-table extraction by default.
 
 Primary endpoints:
 - Metadata/page context: `https://data.gov.sg/datasets/<dataset_id>/view`
@@ -51,6 +53,9 @@ Rate-limit and access handling:
   - Max 2 retries per endpoint
   - Backoff: 10s, then 20s
   - If still blocked, stop and report partial/unavailable coverage explicitly.
+- Enforce call budget to prevent runaway retries:
+  - Target budget: <=6 total API calls per dataset for a standard brief
+  - Hard cap: 10 calls; after cap, stop fetching and publish with explicit data-limit caveat
 - If network/permission constraints block direct API calls, use the dataset page to capture:
   - Latest date coverage
   - Last updated timestamp
@@ -59,8 +64,9 @@ Rate-limit and access handling:
 
 Pagination and completeness:
 - Check `result.total`, `result.limit`, and `result._links.next`.
-- For full extracts, iterate offsets until all rows are collected.
+- For full extracts, iterate offsets only when essential to answer the user request.
 - Record row counts used in analysis (for reproducibility).
+- Prefer publishing high-confidence aggregate insights over failing on exhaustive extraction.
 
 ### 2. Profile data before analysis
 
