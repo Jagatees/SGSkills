@@ -26,7 +26,9 @@ Collect or infer:
 
 Defaults when unclear:
 - One primary dataset
-- Last 12 months
+- Time window by frequency:
+  - Annual datasets: latest complete year (or latest 2 complete years for YoY)
+  - Monthly/weekly/daily datasets: last 12 months
 - Audience: public
 - Standard depth
 
@@ -45,6 +47,10 @@ Primary endpoints:
 Rate-limit and access handling:
 - If API returns `TOO_MANY_REQUESTS` (code `24`), wait 10-12 seconds and retry once.
 - If still blocked, switch to `datastore_search_sql` with narrower queries.
+- Use bounded retries only:
+  - Max 2 retries per endpoint
+  - Backoff: 10s, then 20s
+  - If still blocked, stop and report partial/unavailable coverage explicitly.
 - If network/permission constraints block direct API calls, use the dataset page to capture:
   - Latest date coverage
   - Last updated timestamp
@@ -67,6 +73,16 @@ For each dataset:
 Hard gate:
 - If data is stale for the requested use case or key fields are missing, say so explicitly and reduce confidence.
 
+### 2.5 Clean and validate metrics before aggregation
+
+Before computing numeric trends:
+- Treat the following as non-numeric/missing unless the dataset explicitly documents otherwise:
+  - `na`, `NA`, empty strings
+  - values flagged with markers such as `^`, `*`, `#`, `**`
+- Exclude invalid rows from numeric calculations.
+- Record the number and share of excluded rows for each metric/time period.
+- If excluded share is high (>=10%), cap confidence at `Medium` unless a stronger justification is provided.
+
 ### 3. Compute and verify insights
 
 Build only simple, auditable claims:
@@ -84,6 +100,9 @@ Rules:
 - Do not report causal conclusions unless source text supports causality.
 - If interpretation is reasonable but not proven, prefix with `Inference:`.
 - If a claim cannot be reproduced from visible data, exclude it.
+- For every aggregate claim, state the aggregation method:
+  - `Unweighted row mean`, `Weighted by cohort size`, `Median across rows`, etc.
+- If weighting is unavailable, say so and avoid policy claims that assume population representativeness.
 
 ### 4. Rank by decision value
 
