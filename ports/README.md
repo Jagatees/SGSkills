@@ -2,6 +2,29 @@
 
 This folder contains portable variants of `sg-news-brief` for different AI tools.
 
+## Quick Install (recommended)
+
+From repo root:
+
+```bash
+chmod +x ports/install.sh
+./ports/install.sh <target>
+```
+
+Targets:
+- `codex`
+- `claude`
+- `gemini`
+- `universal`
+
+Optional destination for `claude`, `gemini`, `universal`:
+
+```bash
+./ports/install.sh claude ~/my-project
+./ports/install.sh gemini ~/my-project
+./ports/install.sh universal ~/Desktop
+```
+
 ## 1) Codex
 
 Install:
@@ -53,3 +76,10 @@ Paste it as a prompt template in ChatGPT, Perplexity, Claude web, Gemini web, et
 
 - Skill/command formats are platform-specific; each adapter here mirrors the same v2 behavior.
 - Update the source skill first (`skills/public/sg-news-brief`) and then sync changes into these adapters.
+
+## What to send friends
+
+Share this repo URL and tell them:
+1. Clone or download the repo.
+2. `cd` into repo root.
+3. Run `./ports/install.sh <their-platform>`.
