@@ -1,0 +1,4 @@
+interface:
+  display_name: "SG Open Data Storyteller"
+  short_description: "Turn Singapore open data into clear, source-backed insight briefs"
+  default_prompt: "Analyze a data.gov.sg dataset and produce a concise Singapore insight brief with trends, caveats, confidence labels, and source links."
