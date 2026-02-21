@@ -1,4 +1,4 @@
-# Friend Test Checklist (v2)
+# Friend Test Checklist (v2.1)
 
 Use this checklist to validate whether the skill is production-ready.
 
@@ -15,13 +15,16 @@ Use this checklist to validate whether the skill is production-ready.
 - Includes `Period`, `Updated`, and `Data freshness`.
 - Uses absolute dates (for example: `February 21, 2026`).
 - Every included story has at least one source URL.
+- Every source is a full clickable `https://` URL (not only domain text).
 - Every included story has a confidence label.
 - No low-confidence item appears outside `Watchlist`.
+- `High` confidence appears only when official + independent corroborating source are present.
+- Any non-confirmed analysis line uses the `Inference:` prefix.
 - Tone changes correctly for audience mode.
 - No duplicate story appears in multiple categories.
 
 ## Scoring
 
-- 7/7 checks pass: Ready for wider sharing.
-- 5-6 checks pass: Usable, improve weak spots and retest.
-- 0-4 checks pass: Revise skill instructions before sharing.
+- 10/10 checks pass: Ready for wider sharing.
+- 8-9 checks pass: Usable, improve weak spots and retest.
+- 0-7 checks pass: Revise skill instructions before sharing.

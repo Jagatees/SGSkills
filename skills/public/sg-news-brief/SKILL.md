@@ -8,7 +8,7 @@ description: Create concise Singapore news digests with source links and categor
 ## Overview
 
 Use this skill to produce short, trustworthy Singapore news briefings for daily or weekly updates. Prioritize factual accuracy, source transparency, and clear implications for Singapore readers.
-Current release target: v2 checklist with confidence scoring and strict sourcing.
+Current release target: v2.1 checklist with confidence scoring, strict sourcing, and inference labeling.
 
 Read `references/source-priority.md` before collecting stories.
 Use `references/audience-modes.md` to match tone and section emphasis by audience.
@@ -46,16 +46,18 @@ For each story capture:
 
 Apply these checks:
 - Enforce hard gate: if no credible source URL is available, exclude the story.
+- Require full clickable URLs (`https://...`) in output, not bare domains.
 - Prefer stories with direct primary statements where possible.
 - Use absolute dates (for example: `February 21, 2026`) instead of only relative labels like "today."
 - If facts conflict across outlets, state uncertainty briefly and cite both.
 - Assign confidence per story using the rubric below.
+- Any interpretation beyond explicit source text must be prefixed with `Inference:`.
 
 Do not present speculation as confirmed fact.
 
 ### 3a. Confidence rubric
 
-- High: direct official source or multiple reputable sources that agree on core facts.
+- High: direct official source plus at least one independent reputable source that agrees on core facts.
 - Medium: one reputable source with clear reporting but limited corroboration.
 - Low: incomplete verification, conflicting details, or indirect sourcing.
 
@@ -85,7 +87,7 @@ Use this format:
 Period: <start date> to <end date>
 Updated: <timestamp with timezone>
 Data freshness: <when sources were checked>
-Skill version: <v2>
+Skill version: <v2.1>
 
 ## Top Headlines
 1. <headline> - <one-line why it matters>
@@ -96,7 +98,7 @@ Skill version: <v2>
 - <headline> (<source>, <publish date>): <2-3 sentence summary>
   - Confidence: <High|Medium|Low>
   - Why it matters: <1 sentence>
-  - Source: <url>
+  - Source: <https://full-link-to-article-or-statement>
 
 ## Watchlist
 - <emerging issue to monitor next update>
@@ -113,6 +115,7 @@ Skill version: <v2>
 - Include source links for every included story.
 - End with a short "watch next" view when relevant.
 - Never include an uncited claim as a confirmed fact.
+- Use `Inference:` prefix for analytical statements not directly confirmed by sources.
 
 ## Audience modes
 

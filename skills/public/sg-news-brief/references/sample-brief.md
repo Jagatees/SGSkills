@@ -3,7 +3,7 @@
 Period: February 20, 2026 to February 21, 2026  
 Updated: February 21, 2026, 7:00 PM SGT
 Data freshness: Sources checked on February 21, 2026, 6:50 PM SGT
-Skill version: v2
+Skill version: v2.1
 
 ## Top Headlines
 
@@ -25,6 +25,7 @@ Skill version: v2
 - SMEs eligible for expanded co-funding under a productivity program (Business newsroom, February 21, 2026): The program increases support tiers for selected technology adoption categories and includes application guidance for smaller firms.
   - Confidence: Medium
   - Why it matters: Reduces implementation risk and near-term capex pressure for qualifying SMEs.
+  - Inference: If adoption rates rise, near-term software services demand may improve.
   - Source: https://example.com/sme-program
 
 ### Transport and infrastructure
