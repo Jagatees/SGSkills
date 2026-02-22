@@ -24,6 +24,7 @@ Arguments:
                 - sg-school-admission-orchestrator
                 - sg-school-eligibility-checker
                 - sg-school-discovery-finder
+                - sg-school-finder-orchestrator
                 - all (codex target only; default for codex)
 
 Examples:
@@ -34,6 +35,7 @@ Examples:
   ./ports/install.sh codex . sg-school-admission-orchestrator
   ./ports/install.sh codex . sg-school-eligibility-checker
   ./ports/install.sh codex . sg-school-discovery-finder
+  ./ports/install.sh codex . sg-school-finder-orchestrator
   ./ports/install.sh claude ~/my-project sg-open-data-storyteller
   ./ports/install.sh gemini ~/my-project sg-open-data-storyteller
   ./ports/install.sh universal ~/Desktop sg-open-data-storyteller
@@ -66,13 +68,13 @@ install_codex() {
       cp -R "${REPO_ROOT}/skills/public/." "${dst}/"
       echo "Installed all Codex skills to: ${dst}"
       ;;
-    sg-news-brief|sg-govtech-announcement-scanner|sg-open-data-storyteller|sg-school-admission-orchestrator|sg-school-eligibility-checker|sg-school-discovery-finder)
+    sg-news-brief|sg-govtech-announcement-scanner|sg-open-data-storyteller|sg-school-admission-orchestrator|sg-school-eligibility-checker|sg-school-discovery-finder|sg-school-finder-orchestrator)
       cp -R "${REPO_ROOT}/skills/public/${skill}" "${dst}/"
       echo "Installed Codex skill to: ${dst}/${skill}"
       ;;
     *)
       echo "Unknown skill for codex: ${skill}"
-      echo "Valid options: sg-news-brief, sg-govtech-announcement-scanner, sg-open-data-storyteller, sg-school-admission-orchestrator, sg-school-eligibility-checker, sg-school-discovery-finder, all"
+      echo "Valid options: sg-news-brief, sg-govtech-announcement-scanner, sg-open-data-storyteller, sg-school-admission-orchestrator, sg-school-eligibility-checker, sg-school-discovery-finder, sg-school-finder-orchestrator, all"
       exit 1
       ;;
   esac

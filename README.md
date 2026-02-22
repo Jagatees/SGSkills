@@ -24,6 +24,7 @@ Examples currently included:
 - `sg-school-admission-orchestrator`
 - `sg-school-eligibility-checker`
 - `sg-school-discovery-finder`
+- `sg-school-finder-orchestrator`
 
 As new Singapore-context skills are added, they are part of this same collection.
 
@@ -80,6 +81,7 @@ curl -fsSL https://raw.githubusercontent.com/Jagatees/SGSkills/main/ports/instal
 curl -fsSL https://raw.githubusercontent.com/Jagatees/SGSkills/main/ports/install-from-github.sh | bash -s -- sg-school-admission-orchestrator
 curl -fsSL https://raw.githubusercontent.com/Jagatees/SGSkills/main/ports/install-from-github.sh | bash -s -- sg-school-eligibility-checker
 curl -fsSL https://raw.githubusercontent.com/Jagatees/SGSkills/main/ports/install-from-github.sh | bash -s -- sg-school-discovery-finder
+curl -fsSL https://raw.githubusercontent.com/Jagatees/SGSkills/main/ports/install-from-github.sh | bash -s -- sg-school-finder-orchestrator
 ```
 
 ## Example prompts
@@ -90,6 +92,7 @@ curl -fsSL https://raw.githubusercontent.com/Jagatees/SGSkills/main/ports/instal
 - `Use $sg-school-admission-orchestrator to shortlist 5 suitable primary schools near my area and provide tradeoffs with official source links.`
 - `Use $sg-school-eligibility-checker to verify school admission baseline eligibility and provide a handoff payload for shortlist generation.`
 - `Use $sg-school-discovery-finder to generate a ranked candidate school list by stage and location before final shortlist scoring.`
+- `Use $sg-school-finder-orchestrator to run the full school workflow in one command (eligibility -> discovery -> shortlist).`
 
 ## Cross-platform ports
 
