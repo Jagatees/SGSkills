@@ -4,6 +4,7 @@
 
 - `sg-news-brief`
 - `sg-open-data-storyteller`
+- `sg-govtech-announcement-scanner`
 
 ## Next Candidates
 

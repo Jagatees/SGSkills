@@ -19,12 +19,14 @@ Arguments:
   destination   Optional for claude/gemini/universal (defaults to current directory)
   skill         Optional. One of:
                 - sg-news-brief
+                - sg-govtech-announcement-scanner
                 - sg-open-data-storyteller
                 - all (codex target only; default for codex)
 
 Examples:
   ./ports/install.sh codex
   ./ports/install.sh codex . sg-news-brief
+  ./ports/install.sh codex . sg-govtech-announcement-scanner
   ./ports/install.sh codex . sg-open-data-storyteller
   ./ports/install.sh claude ~/my-project sg-open-data-storyteller
   ./ports/install.sh gemini ~/my-project sg-open-data-storyteller
@@ -58,13 +60,13 @@ install_codex() {
       cp -R "${REPO_ROOT}/skills/public/." "${dst}/"
       echo "Installed all Codex skills to: ${dst}"
       ;;
-    sg-news-brief|sg-open-data-storyteller)
+    sg-news-brief|sg-govtech-announcement-scanner|sg-open-data-storyteller)
       cp -R "${REPO_ROOT}/skills/public/${skill}" "${dst}/"
       echo "Installed Codex skill to: ${dst}/${skill}"
       ;;
     *)
       echo "Unknown skill for codex: ${skill}"
-      echo "Valid options: sg-news-brief, sg-open-data-storyteller, all"
+      echo "Valid options: sg-news-brief, sg-govtech-announcement-scanner, sg-open-data-storyteller, all"
       exit 1
       ;;
   esac

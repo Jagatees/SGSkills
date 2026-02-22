@@ -18,6 +18,7 @@ Most generic AI prompts miss Singapore-specific context and source reliability n
 All public skills live under `skills/public/`.
 
 Examples currently included:
+- `sg-govtech-announcement-scanner`
 - `sg-news-brief`
 - `sg-open-data-storyteller`
 
@@ -45,6 +46,8 @@ ports/
 mkdir -p ~/.codex/skills
 cp -R skills/public/sg-news-brief ~/.codex/skills/
 # or
+cp -R skills/public/sg-govtech-announcement-scanner ~/.codex/skills/
+# or
 cp -R skills/public/sg-open-data-storyteller ~/.codex/skills/
 ```
 
@@ -57,8 +60,25 @@ cp -R skills/public/* ~/.codex/skills/
 
 Restart Codex after install.
 
+### Install from your website (copy-paste one command)
+
+Users can install directly from GitHub without cloning first:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/Jagatees/SGSkills/main/ports/install-from-github.sh | bash -s -- all
+```
+
+Single-skill variants for copy buttons:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/Jagatees/SGSkills/main/ports/install-from-github.sh | bash -s -- sg-news-brief
+curl -fsSL https://raw.githubusercontent.com/Jagatees/SGSkills/main/ports/install-from-github.sh | bash -s -- sg-govtech-announcement-scanner
+curl -fsSL https://raw.githubusercontent.com/Jagatees/SGSkills/main/ports/install-from-github.sh | bash -s -- sg-open-data-storyteller
+```
+
 ## Example prompts
 
+- `Use $sg-govtech-announcement-scanner for the last 7 days and show change type + impact + source links.`
 - `Use $sg-news-brief and give me a Singapore news brief for the last 24 hours.`
 - `Use $sg-open-data-storyteller on https://data.gov.sg/datasets?topics=education&resultId=d_3c55210de27fcccda2ed0c63fdd2b352 and give me a standard brief for policy teams.`
 
