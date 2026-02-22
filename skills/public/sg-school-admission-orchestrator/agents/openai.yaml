@@ -1,0 +1,4 @@
+interface:
+  display_name: "SG School Admission Orchestrator"
+  short_description: "Shortlist Singapore schools with fit scoring, tradeoffs, and source-backed next steps"
+  default_prompt: "Help me shortlist suitable Singapore schools for my child based on location, priorities, and constraints, then provide tradeoffs and a practical admissions checklist with official source links."

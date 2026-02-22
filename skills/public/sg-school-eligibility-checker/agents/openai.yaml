@@ -1,0 +1,4 @@
+interface:
+  display_name: "SG School Eligibility Checker"
+  short_description: "Validate admission baseline eligibility before school shortlisting in Singapore"
+  default_prompt: "Check baseline eligibility for Singapore school admission based on my child profile, flag missing verification points, and return a clean handoff for shortlist building with official source links."

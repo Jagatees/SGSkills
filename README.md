@@ -21,6 +21,9 @@ Examples currently included:
 - `sg-govtech-announcement-scanner`
 - `sg-news-brief`
 - `sg-open-data-storyteller`
+- `sg-school-admission-orchestrator`
+- `sg-school-eligibility-checker`
+- `sg-school-discovery-finder`
 
 As new Singapore-context skills are added, they are part of this same collection.
 
@@ -74,6 +77,9 @@ Single-skill variants for copy buttons:
 curl -fsSL https://raw.githubusercontent.com/Jagatees/SGSkills/main/ports/install-from-github.sh | bash -s -- sg-news-brief
 curl -fsSL https://raw.githubusercontent.com/Jagatees/SGSkills/main/ports/install-from-github.sh | bash -s -- sg-govtech-announcement-scanner
 curl -fsSL https://raw.githubusercontent.com/Jagatees/SGSkills/main/ports/install-from-github.sh | bash -s -- sg-open-data-storyteller
+curl -fsSL https://raw.githubusercontent.com/Jagatees/SGSkills/main/ports/install-from-github.sh | bash -s -- sg-school-admission-orchestrator
+curl -fsSL https://raw.githubusercontent.com/Jagatees/SGSkills/main/ports/install-from-github.sh | bash -s -- sg-school-eligibility-checker
+curl -fsSL https://raw.githubusercontent.com/Jagatees/SGSkills/main/ports/install-from-github.sh | bash -s -- sg-school-discovery-finder
 ```
 
 ## Example prompts
@@ -81,6 +87,9 @@ curl -fsSL https://raw.githubusercontent.com/Jagatees/SGSkills/main/ports/instal
 - `Use $sg-govtech-announcement-scanner for the last 7 days and show change type + impact + source links.`
 - `Use $sg-news-brief and give me a Singapore news brief for the last 24 hours.`
 - `Use $sg-open-data-storyteller on https://data.gov.sg/datasets?topics=education&resultId=d_3c55210de27fcccda2ed0c63fdd2b352 and give me a standard brief for policy teams.`
+- `Use $sg-school-admission-orchestrator to shortlist 5 suitable primary schools near my area and provide tradeoffs with official source links.`
+- `Use $sg-school-eligibility-checker to verify school admission baseline eligibility and provide a handoff payload for shortlist generation.`
+- `Use $sg-school-discovery-finder to generate a ranked candidate school list by stage and location before final shortlist scoring.`
 
 ## Cross-platform ports
 

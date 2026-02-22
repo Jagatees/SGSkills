@@ -6,11 +6,11 @@ REPO_REF="${REPO_REF:-main}"
 SKILL="${1:-all}"
 
 case "${SKILL}" in
-  all|sg-news-brief|sg-govtech-announcement-scanner|sg-open-data-storyteller)
+  all|sg-news-brief|sg-govtech-announcement-scanner|sg-open-data-storyteller|sg-school-admission-orchestrator|sg-school-eligibility-checker|sg-school-discovery-finder)
     ;;
   *)
     echo "Unknown skill: ${SKILL}"
-    echo "Valid options: all, sg-news-brief, sg-govtech-announcement-scanner, sg-open-data-storyteller"
+    echo "Valid options: all, sg-news-brief, sg-govtech-announcement-scanner, sg-open-data-storyteller, sg-school-admission-orchestrator, sg-school-eligibility-checker, sg-school-discovery-finder"
     exit 1
     ;;
 esac

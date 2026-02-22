@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SGSkills Showcase</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #f7f6f2;
+      --ink: #0f1d2e;
+      --muted: #4e5a68;
+      --surface: #ffffff;
+      --line: #d9dddf;
+      --accent: #0b8f63;
+      --accent-2: #ff7b37;
+      --shadow: 0 20px 60px rgba(18, 34, 50, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Manrope", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 10% 0%, #d7efe6 0%, transparent 40%),
+        radial-gradient(circle at 100% 100%, #ffe8d8 0%, transparent 45%),
+        var(--bg);
+      line-height: 1.45;
+    }
+
+    .container {
+      width: min(1120px, calc(100% - 2.2rem));
+      margin: 0 auto;
+      padding: 2.2rem 0 4rem;
+    }
+
+    .hero {
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      padding: 1.5rem;
+      background: linear-gradient(125deg, #f9fffb, #fff5ee 45%, #fff);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      position: relative;
+      animation: rise 500ms ease-out;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      right: -70px;
+      top: -80px;
+      background: rgba(11, 143, 99, 0.1);
+      z-index: 0;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.42rem 0.8rem;
+      border-radius: 999px;
+      background: #e9f7f1;
+      color: #0b6f4f;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin: 0;
+      font-family: "Space Grotesk", sans-serif;
+      letter-spacing: -0.03em;
+    }
+
+    h1 {
+      margin-top: 0.7rem;
+      font-size: clamp(1.8rem, 5vw, 3rem);
+      max-width: 16ch;
+    }
+
+    .subtitle {
+      margin: 0.75rem 0 0;
+      max-width: 62ch;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.85rem;
+      margin-top: 1.3rem;
+    }
+
+    .stat-card {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: var(--surface);
+      padding: 0.85rem;
+      transition: transform 180ms ease, box-shadow 180ms ease;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(15, 29, 46, 0.08);
+    }
+
+    .stat-number {
+      font-family: "Space Grotesk", sans-serif;
+      font-weight: 700;
+      font-size: clamp(1.2rem, 4vw, 2rem);
+      color: var(--accent);
+      line-height: 1.1;
+    }
+
+    .stat-label {
+      margin-top: 0.25rem;
+      color: var(--muted);
+      font-size: 0.92rem;
+      font-weight: 600;
+    }
+
+    .sections {
+      display: grid;
+      gap: 1rem;
+      margin-top: 1.2rem;
+    }
+
+    .card {
+      background: var(--surface);
+      border-radius: 22px;
+      padding: 1.2rem;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      animation: rise 650ms ease-out;
+    }
+
+    .card h2 {
+      font-size: clamp(1.15rem, 3vw, 1.45rem);
+      margin-bottom: 0.7rem;
+    }
+
+    .timeline {
+      position: relative;
+      list-style: none;
+      margin: 0;
+      padding: 0 0 0 1.35rem;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 0.3rem;
+      top: 0.2rem;
+      bottom: 0.2rem;
+      width: 2px;
+      background: linear-gradient(var(--accent), #cfe9dd);
+    }
+
+    .timeline-item {
+      position: relative;
+      padding: 0 0 1rem 0.6rem;
+    }
+
+    .timeline-item:last-child {
+      padding-bottom: 0;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -1.28rem;
+      top: 0.18rem;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 4px #e4f3ec;
+    }
+
+    .timeline-date {
+      font-size: 0.75rem;
+      color: #0b6f4f;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .timeline-title {
+      margin-top: 0.25rem;
+      font-weight: 800;
+      font-size: 1rem;
+    }
+
+    .timeline-text {
+      margin: 0.28rem 0 0;
+      color: var(--muted);
+      font-size: 0.93rem;
+    }
+
+    .skills-grid {
+      margin-top: 0.75rem;
+      display: grid;
+      gap: 0.7rem;
+    }
+
+    .skill-box {
+      border: 1px dashed #b6c1c8;
+      border-radius: 14px;
+      padding: 0.8rem;
+      background: #fcfdfd;
+    }
+
+    .skill-name {
+      font-family: "Space Grotesk", sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      margin: 0;
+    }
+
+    .skill-desc {
+      margin: 0.25rem 0 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .pipeline {
+      margin-top: 0.75rem;
+      display: flex;
+      gap: 0.5rem;
+      overflow-x: auto;
+      padding-bottom: 0.2rem;
+    }
+
+    .step {
+      min-width: 210px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 0.75rem;
+      background: #fff;
+      position: relative;
+    }
+
+    .step + .step::before {
+      content: "→";
+      position: absolute;
+      left: -0.62rem;
+      top: calc(50% - 0.7rem);
+      color: var(--accent-2);
+      font-size: 1rem;
+      font-weight: 800;
+      background: var(--bg);
+      border-radius: 999px;
+      padding: 0 0.12rem;
+    }
+
+    .step span {
+      display: block;
+      color: #0b6f4f;
+      font-size: 0.74rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .step strong {
+      display: block;
+      margin-top: 0.2rem;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 0.95rem;
+    }
+
+    .footer-note {
+      margin-top: 0.65rem;
+      font-size: 0.84rem;
+      color: var(--muted);
+    }
+
+    @media (min-width: 840px) {
+      .stats-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .sections {
+        grid-template-columns: 1.1fr 1fr;
+      }
+
+      .hero {
+        padding: 1.7rem;
+      }
+    }
+
+    @keyframes rise {
+      from {
+        opacity: 0;
+        transform: translateY(8px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <section class="hero">
+      <div class="hero-content">
+        <span class="pill">Singapore Skills Showcase</span>
+        <h1>One view to track skill growth and multi-skill pipelines.</h1>
+        <p class="subtitle">A timeline-style showcase inspired by skills platforms, focused on Singapore workflows and measurable repository stats.</p>
+
+        <div class="stats-grid">
+          <article class="stat-card">
+            <div class="stat-number">3</div>
+            <div class="stat-label">Public skills</div>
+          </article>
+          <article class="stat-card">
+            <div class="stat-number">12</div>
+            <div class="stat-label">Reference docs</div>
+          </article>
+          <article class="stat-card">
+            <div class="stat-number">5</div>
+            <div class="stat-label">Port/install assets</div>
+          </article>
+          <article class="stat-card">
+            <div class="stat-number">3</div>
+            <div class="stat-label">Agent configs</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="sections">
+      <article class="card">
+        <h2>Skills Timeline</h2>
+        <ol class="timeline">
+          <li class="timeline-item">
+            <div class="timeline-date">Phase 1</div>
+            <div class="timeline-title">Foundation: Reusable SG workflows</div>
+            <p class="timeline-text">Set up a clean skill structure with references, QA checklists, and cross-tool portability templates.</p>
+          </li>
+          <li class="timeline-item">
+            <div class="timeline-date">Phase 2</div>
+            <div class="timeline-title">Launch first three public skills</div>
+            <p class="timeline-text">`sg-news-brief`, `sg-govtech-announcement-scanner`, and `sg-open-data-storyteller` are now production-ready baseline skills.</p>
+          </li>
+          <li class="timeline-item">
+            <div class="timeline-date">Phase 3</div>
+            <div class="timeline-title">Multi-skill orchestration demo</div>
+            <p class="timeline-text">Show how a single request can chain scanning, briefing, and open-data evidence into one decision brief.</p>
+          </li>
+        </ol>
+      </article>
+
+      <article class="card">
+        <h2>Current Skills</h2>
+        <div class="skills-grid">
+          <div class="skill-box">
+            <p class="skill-name">sg-govtech-announcement-scanner</p>
+            <p class="skill-desc">Tracks official GovTech/agency updates with structured impact labels and confidence scoring.</p>
+          </div>
+          <div class="skill-box">
+            <p class="skill-name">sg-news-brief</p>
+            <p class="skill-desc">Generates concise Singapore news digests with verification and source-backed summaries.</p>
+          </div>
+          <div class="skill-box">
+            <p class="skill-name">sg-open-data-storyteller</p>
+            <p class="skill-desc">Turns data.gov.sg datasets into clear policy and operations narratives with caveats.</p>
+          </div>
+        </div>
+
+        <h2 style="margin-top: 1rem;">Run Many Skills Together</h2>
+        <div class="pipeline" aria-label="Multi-skill workflow pipeline">
+          <div class="step">
+            <span>Step 1</span>
+            <strong>Announcement scan</strong>
+            Collect verified updates and classify change type.
+          </div>
+          <div class="step">
+            <span>Step 2</span>
+            <strong>News context</strong>
+            Add broader Singapore context and category ranking.
+          </div>
+          <div class="step">
+            <span>Step 3</span>
+            <strong>Data evidence</strong>
+            Back key points with open-data trend checks.
+          </div>
+          <div class="step">
+            <span>Step 4</span>
+            <strong>Decision brief</strong>
+            Publish one actionable summary with next steps.
+          </div>
+        </div>
+
+        <p class="footer-note">Designed for `/Users/jagatees/Desktop/Files/Github_Hubs/SGSkills` and easy to port into `sgskills.jagatees.dev`.</p>
+      </article>
+    </section>
+  </main>
+</body>
+</html>

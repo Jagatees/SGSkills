@@ -1,0 +1,4 @@
+interface:
+  display_name: "SG School Discovery Finder"
+  short_description: "Build source-backed candidate school lists by stage, location, and family priorities"
+  default_prompt: "Create a ranked candidate list of Singapore schools for my child based on stage, location, and family priorities, and return a handoff payload for final shortlist scoring with official source links."
