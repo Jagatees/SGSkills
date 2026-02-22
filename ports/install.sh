@@ -25,7 +25,7 @@ Arguments:
                 - sg-school-eligibility-checker
                 - sg-school-discovery-finder
                 - sg-school-finder-orchestrator
-                - all (codex target only; default for codex)
+                - all (default for codex, claude, gemini, universal)
 
 Examples:
   ./ports/install.sh codex
@@ -37,8 +37,11 @@ Examples:
   ./ports/install.sh codex . sg-school-discovery-finder
   ./ports/install.sh codex . sg-school-finder-orchestrator
   ./ports/install.sh claude ~/my-project sg-open-data-storyteller
+  ./ports/install.sh claude ~/my-project all
   ./ports/install.sh gemini ~/my-project sg-open-data-storyteller
+  ./ports/install.sh gemini ~/my-project all
   ./ports/install.sh universal ~/Desktop sg-open-data-storyteller
+  ./ports/install.sh universal ~/Desktop all
 USAGE
 }
 
@@ -55,9 +58,19 @@ if [[ -z "${skill}" ]]; then
   if [[ "${target}" == "codex" ]]; then
     skill="all"
   else
-    skill="sg-news-brief"
+    skill="all"
   fi
 fi
+
+ALL_SKILLS=(
+  "sg-news-brief"
+  "sg-govtech-announcement-scanner"
+  "sg-open-data-storyteller"
+  "sg-school-admission-orchestrator"
+  "sg-school-eligibility-checker"
+  "sg-school-discovery-finder"
+  "sg-school-finder-orchestrator"
+)
 
 install_codex() {
   local dst="${HOME}/.codex/skills"
@@ -79,82 +92,77 @@ install_codex() {
       ;;
   esac
 
-  echo "Next: restart Codex and run a prompt like: Use \$${skill} ..."
+  if [[ "${skill}" == "all" ]]; then
+    echo "Next: restart Codex and run a prompt like: Use \$sg-news-brief ..."
+  else
+    echo "Next: restart Codex and run a prompt like: Use \$${skill} ..."
+  fi
 }
 
 install_claude() {
-  local src=""
-  local out=""
-  case "${skill}" in
-    sg-news-brief)
-      src="${SCRIPT_DIR}/claude/.claude/commands/sg-news-brief.md"
-      out="sg-news-brief.md"
-      ;;
-    sg-open-data-storyteller)
-      src="${SCRIPT_DIR}/claude/.claude/commands/sg-open-data-storyteller.md"
-      out="sg-open-data-storyteller.md"
-      ;;
-    *)
-      echo "Unknown skill for claude: ${skill}"
-      echo "Valid options: sg-news-brief, sg-open-data-storyteller"
-      exit 1
-      ;;
-  esac
-
   local dst="${destination}/.claude/commands"
   mkdir -p "${dst}"
+  if [[ "${skill}" == "all" ]]; then
+    cp "${SCRIPT_DIR}/claude/.claude/commands/"*.md "${dst}/"
+    echo "Installed all Claude commands to: ${dst}"
+    echo "Next: in Claude Code, run: /<skill-name> <your arguments>"
+    return
+  fi
+
+  local src="${SCRIPT_DIR}/claude/.claude/commands/${skill}.md"
+  local out="${skill}.md"
+  if [[ ! -f "${src}" ]]; then
+    echo "Unknown skill for claude: ${skill}"
+    echo "Valid options: ${ALL_SKILLS[*]} all"
+    exit 1
+  fi
+
   cp "${src}" "${dst}/${out}"
   echo "Installed Claude command to: ${dst}/${out}"
   echo "Next: in Claude Code, run: /${out%.md} <your arguments>"
 }
 
 install_gemini() {
-  local src=""
-  local out=""
-  case "${skill}" in
-    sg-news-brief)
-      src="${SCRIPT_DIR}/gemini/.gemini/commands/sg-news-brief.toml"
-      out="sg-news-brief.toml"
-      ;;
-    sg-open-data-storyteller)
-      src="${SCRIPT_DIR}/gemini/.gemini/commands/sg-open-data-storyteller.toml"
-      out="sg-open-data-storyteller.toml"
-      ;;
-    *)
-      echo "Unknown skill for gemini: ${skill}"
-      echo "Valid options: sg-news-brief, sg-open-data-storyteller"
-      exit 1
-      ;;
-  esac
-
   local dst="${destination}/.gemini/commands"
   mkdir -p "${dst}"
+  if [[ "${skill}" == "all" ]]; then
+    cp "${SCRIPT_DIR}/gemini/.gemini/commands/"*.toml "${dst}/"
+    echo "Installed all Gemini commands to: ${dst}"
+    echo "Next: in Gemini CLI, run: /<skill-name> <your arguments>"
+    return
+  fi
+
+  local src="${SCRIPT_DIR}/gemini/.gemini/commands/${skill}.toml"
+  local out="${skill}.toml"
+  if [[ ! -f "${src}" ]]; then
+    echo "Unknown skill for gemini: ${skill}"
+    echo "Valid options: ${ALL_SKILLS[*]} all"
+    exit 1
+  fi
+
   cp "${src}" "${dst}/${out}"
   echo "Installed Gemini command to: ${dst}/${out}"
   echo "Next: in Gemini CLI, run: /${out%.toml} <your arguments>"
 }
 
 install_universal() {
-  local src=""
-  local out=""
-  case "${skill}" in
-    sg-news-brief)
-      src="${SCRIPT_DIR}/universal/sg-news-brief-prompt.md"
-      out="sg-news-brief-prompt.md"
-      ;;
-    sg-open-data-storyteller)
-      src="${SCRIPT_DIR}/universal/sg-open-data-storyteller-prompt.md"
-      out="sg-open-data-storyteller-prompt.md"
-      ;;
-    *)
-      echo "Unknown skill for universal: ${skill}"
-      echo "Valid options: sg-news-brief, sg-open-data-storyteller"
-      exit 1
-      ;;
-  esac
-
   local dst="${destination}"
   mkdir -p "${dst}"
+  if [[ "${skill}" == "all" ]]; then
+    cp "${SCRIPT_DIR}/universal/"*-prompt.md "${dst}/"
+    echo "Copied all universal prompts to: ${dst}"
+    echo "Next: open any prompt file and paste it into your AI tool."
+    return
+  fi
+
+  local src="${SCRIPT_DIR}/universal/${skill}-prompt.md"
+  local out="${skill}-prompt.md"
+  if [[ ! -f "${src}" ]]; then
+    echo "Unknown skill for universal: ${skill}"
+    echo "Valid options: ${ALL_SKILLS[*]} all"
+    exit 1
+  fi
+
   cp "${src}" "${dst}/${out}"
   echo "Copied universal prompt to: ${dst}/${out}"
   echo "Next: open the file and paste the template into your AI tool."

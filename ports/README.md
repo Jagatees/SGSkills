@@ -21,7 +21,8 @@ Targets:
 Notes:
 
 - `destination` is optional for `claude`, `gemini`, and `universal` (defaults to current directory).
-- `skill` is optional for `codex` (defaults to `all`).
+- `skill` is optional for all targets (defaults to `all`).
+- If you do not know what destination path to use, set destination to `.` (current folder).
 
 Examples:
 
@@ -31,10 +32,21 @@ Examples:
 ./ports/install.sh codex . sg-govtech-announcement-scanner
 ./ports/install.sh claude ~/my-project sg-news-brief
 ./ports/install.sh claude ~/my-project sg-open-data-storyteller
+./ports/install.sh claude ~/my-project all
 ./ports/install.sh gemini ~/my-project sg-news-brief
 ./ports/install.sh gemini ~/my-project sg-open-data-storyteller
+./ports/install.sh gemini ~/my-project all
 ./ports/install.sh universal ~/Desktop sg-news-brief
 ./ports/install.sh universal ~/Desktop sg-open-data-storyteller
+./ports/install.sh universal ~/Desktop all
+```
+
+No custom path example:
+
+```bash
+./ports/install.sh claude . all
+./ports/install.sh gemini . all
+./ports/install.sh universal . all
 ```
 
 ## Codex
@@ -69,10 +81,14 @@ Use in Codex:
 
 ## Claude / Gemini / Universal
 
-Supported skills for these targets:
-
+Supported skills:
 - `sg-news-brief`
+- `sg-govtech-announcement-scanner`
 - `sg-open-data-storyteller`
+- `sg-school-admission-orchestrator`
+- `sg-school-eligibility-checker`
+- `sg-school-discovery-finder`
+- `sg-school-finder-orchestrator`
 
 Install one skill:
 
@@ -85,6 +101,40 @@ Install one skill:
 
 ./ports/install.sh universal ~/Desktop sg-news-brief
 ./ports/install.sh universal ~/Desktop sg-open-data-storyteller
+```
+
+Install all skills:
+
+```bash
+./ports/install.sh claude ~/my-project all
+./ports/install.sh gemini ~/my-project all
+./ports/install.sh universal ~/Desktop all
+```
+
+## Browser-Based LLM Use (No Local LLM/CLI Needed)
+
+For users who only use browser AI tools:
+
+1. Create universal prompt files:
+```bash
+./ports/install.sh universal . all
+```
+2. Open any file in `ports/universal/`.
+3. Copy the prompt text into your browser LLM chat.
+4. Add your scope inputs (for example: date range, location, audience), then run.
+
+## Convert Skills For Other LLMs
+
+Regenerate Claude + Gemini + Universal ports from `skills/public/*/SKILL.md`:
+
+```bash
+./ports/scripts/convert-skill.sh all
+```
+
+Or regenerate only one skill:
+
+```bash
+./ports/scripts/convert-skill.sh sg-school-eligibility-checker
 ```
 
 ## What to send friends

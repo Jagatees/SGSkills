@@ -36,3 +36,55 @@ Track per run (where applicable):
 - Exclude invalid/suppressed values from numeric calculations.
 - State aggregation method for numeric summaries.
 - Prefer omission over speculation.
+
+## Quick Copy: Local Install
+
+Run from repo root:
+
+```bash
+chmod +x ports/install.sh
+```
+
+Install all skills for Codex:
+
+```bash
+./ports/install.sh codex
+```
+
+Install all skills for Claude:
+
+```bash
+./ports/install.sh claude ~/my-project all
+```
+
+Install all skills for Gemini:
+
+```bash
+./ports/install.sh gemini ~/my-project all
+```
+
+Copy all universal prompt files:
+
+```bash
+./ports/install.sh universal ~/Desktop all
+```
+
+If you do not have a custom install folder, use your current folder:
+
+```bash
+./ports/install.sh claude . all
+./ports/install.sh gemini . all
+./ports/install.sh universal . all
+```
+
+## Browser LLM (No Local CLI)
+
+If you only use browser-based AI tools (for example ChatGPT web, Claude web, Gemini web):
+
+1. Generate or copy universal prompt files:
+```bash
+./ports/install.sh universal . all
+```
+2. Open one file in `/Users/jagatees/Desktop/Files/Github_Hubs/SGSkills/ports/universal/` (or the folder you copied to).
+3. Copy the prompt text into your browser LLM chat.
+4. Add your task scope at the top (time window, location, stage, etc.), then run it.

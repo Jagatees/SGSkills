@@ -98,6 +98,35 @@ curl -fsSL https://raw.githubusercontent.com/Jagatees/SGSkills/main/ports/instal
 
 See `ports/README.md` for using prompt ports in other tools.
 
+### Local install for other LLM tools
+
+From repo root:
+
+```bash
+chmod +x ports/install.sh
+./ports/install.sh claude ~/my-project all
+./ports/install.sh gemini ~/my-project all
+./ports/install.sh universal ~/Desktop all
+```
+
+Single-skill examples:
+
+```bash
+./ports/install.sh claude ~/my-project sg-school-eligibility-checker
+./ports/install.sh gemini ~/my-project sg-school-eligibility-checker
+./ports/install.sh universal ~/Desktop sg-school-eligibility-checker
+```
+
+### Convert any skill to other LLM formats
+
+Regenerate Claude + Gemini + Universal adapters from source skills:
+
+```bash
+./ports/scripts/convert-skill.sh all
+# or one skill
+./ports/scripts/convert-skill.sh sg-school-admission-orchestrator
+```
+
 ## Documentation
 
 - `ARCHITECTURE.md`
