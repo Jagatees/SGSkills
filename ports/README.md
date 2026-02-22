@@ -28,6 +28,7 @@ Examples:
 ```bash
 ./ports/install.sh codex
 ./ports/install.sh codex . sg-open-data-storyteller
+./ports/install.sh codex . sg-govtech-announcement-scanner
 ./ports/install.sh claude ~/my-project sg-news-brief
 ./ports/install.sh claude ~/my-project sg-open-data-storyteller
 ./ports/install.sh gemini ~/my-project sg-news-brief
@@ -48,7 +49,17 @@ Install one skill:
 
 ```bash
 ./ports/install.sh codex . sg-news-brief
+./ports/install.sh codex . sg-govtech-announcement-scanner
 ./ports/install.sh codex . sg-open-data-storyteller
+```
+
+Install from a website copy button (no local clone needed):
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/Jagatees/SGSkills/main/ports/install-from-github.sh | bash -s -- all
+curl -fsSL https://raw.githubusercontent.com/Jagatees/SGSkills/main/ports/install-from-github.sh | bash -s -- sg-news-brief
+curl -fsSL https://raw.githubusercontent.com/Jagatees/SGSkills/main/ports/install-from-github.sh | bash -s -- sg-govtech-announcement-scanner
+curl -fsSL https://raw.githubusercontent.com/Jagatees/SGSkills/main/ports/install-from-github.sh | bash -s -- sg-open-data-storyteller
 ```
 
 Use in Codex:

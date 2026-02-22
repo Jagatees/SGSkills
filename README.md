@@ -46,6 +46,8 @@ ports/
 mkdir -p ~/.codex/skills
 cp -R skills/public/sg-news-brief ~/.codex/skills/
 # or
+cp -R skills/public/sg-govtech-announcement-scanner ~/.codex/skills/
+# or
 cp -R skills/public/sg-open-data-storyteller ~/.codex/skills/
 ```
 
@@ -57,6 +59,22 @@ cp -R skills/public/* ~/.codex/skills/
 ```
 
 Restart Codex after install.
+
+### Install from your website (copy-paste one command)
+
+Users can install directly from GitHub without cloning first:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/Jagatees/SGSkills/main/ports/install-from-github.sh | bash -s -- all
+```
+
+Single-skill variants for copy buttons:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/Jagatees/SGSkills/main/ports/install-from-github.sh | bash -s -- sg-news-brief
+curl -fsSL https://raw.githubusercontent.com/Jagatees/SGSkills/main/ports/install-from-github.sh | bash -s -- sg-govtech-announcement-scanner
+curl -fsSL https://raw.githubusercontent.com/Jagatees/SGSkills/main/ports/install-from-github.sh | bash -s -- sg-open-data-storyteller
+```
 
 ## Example prompts
 
