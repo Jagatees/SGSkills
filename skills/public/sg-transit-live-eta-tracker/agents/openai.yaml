@@ -1,0 +1,4 @@
+interface:
+  display_name: "SG Transit Live ETA Tracker"
+  short_description: "Fetch live SG bus ETAs and rail alerts into a structured commute-risk snapshot"
+  default_prompt: "Use sg-transit-live-eta-tracker to check live bus ETAs and train alerts for my commute, and return impacted services with confidence and source links."

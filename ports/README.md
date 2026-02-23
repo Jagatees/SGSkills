@@ -30,6 +30,8 @@ Examples:
 ./ports/install.sh codex
 ./ports/install.sh codex . sg-open-data-storyteller
 ./ports/install.sh codex . sg-govtech-announcement-scanner
+./ports/install.sh codex . sg-transit-service-tracker
+./ports/install.sh codex . sg-transit-live-eta-tracker
 ./ports/install.sh claude ~/my-project sg-news-brief
 ./ports/install.sh claude ~/my-project sg-open-data-storyteller
 ./ports/install.sh claude ~/my-project all
@@ -63,6 +65,8 @@ Install one skill:
 ./ports/install.sh codex . sg-news-brief
 ./ports/install.sh codex . sg-govtech-announcement-scanner
 ./ports/install.sh codex . sg-open-data-storyteller
+./ports/install.sh codex . sg-transit-service-tracker
+./ports/install.sh codex . sg-transit-live-eta-tracker
 ```
 
 Install from a website copy button (no local clone needed):
@@ -72,12 +76,16 @@ curl -fsSL https://raw.githubusercontent.com/Jagatees/SGSkills/main/ports/instal
 curl -fsSL https://raw.githubusercontent.com/Jagatees/SGSkills/main/ports/install-from-github.sh | bash -s -- sg-news-brief
 curl -fsSL https://raw.githubusercontent.com/Jagatees/SGSkills/main/ports/install-from-github.sh | bash -s -- sg-govtech-announcement-scanner
 curl -fsSL https://raw.githubusercontent.com/Jagatees/SGSkills/main/ports/install-from-github.sh | bash -s -- sg-open-data-storyteller
+curl -fsSL https://raw.githubusercontent.com/Jagatees/SGSkills/main/ports/install-from-github.sh | bash -s -- sg-transit-service-tracker
+curl -fsSL https://raw.githubusercontent.com/Jagatees/SGSkills/main/ports/install-from-github.sh | bash -s -- sg-transit-live-eta-tracker
 ```
 
 Use in Codex:
 
 - `Use $sg-news-brief and give me a Singapore news brief for the last 24 hours.`
 - `Use $sg-open-data-storyteller on <data.gov.sg link> and give me a standard brief for policy teams.`
+- `Use $sg-transit-service-tracker for the last 24 hours and list disruptions with affected lines and source links.`
+- `Use $sg-transit-live-eta-tracker for the next 60 minutes and assess delay risk for my commute.`
 
 ## Claude / Gemini / Universal
 
@@ -85,6 +93,8 @@ Supported skills:
 - `sg-news-brief`
 - `sg-govtech-announcement-scanner`
 - `sg-open-data-storyteller`
+- `sg-transit-service-tracker`
+- `sg-transit-live-eta-tracker`
 - `sg-school-admission-orchestrator`
 - `sg-school-eligibility-checker`
 - `sg-school-discovery-finder`

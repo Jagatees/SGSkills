@@ -21,6 +21,8 @@ Arguments:
                 - sg-news-brief
                 - sg-govtech-announcement-scanner
                 - sg-open-data-storyteller
+                - sg-transit-service-tracker
+                - sg-transit-live-eta-tracker
                 - sg-school-admission-orchestrator
                 - sg-school-eligibility-checker
                 - sg-school-discovery-finder
@@ -32,6 +34,8 @@ Examples:
   ./ports/install.sh codex . sg-news-brief
   ./ports/install.sh codex . sg-govtech-announcement-scanner
   ./ports/install.sh codex . sg-open-data-storyteller
+  ./ports/install.sh codex . sg-transit-service-tracker
+  ./ports/install.sh codex . sg-transit-live-eta-tracker
   ./ports/install.sh codex . sg-school-admission-orchestrator
   ./ports/install.sh codex . sg-school-eligibility-checker
   ./ports/install.sh codex . sg-school-discovery-finder
@@ -66,6 +70,8 @@ ALL_SKILLS=(
   "sg-news-brief"
   "sg-govtech-announcement-scanner"
   "sg-open-data-storyteller"
+  "sg-transit-service-tracker"
+  "sg-transit-live-eta-tracker"
   "sg-school-admission-orchestrator"
   "sg-school-eligibility-checker"
   "sg-school-discovery-finder"
@@ -81,13 +87,13 @@ install_codex() {
       cp -R "${REPO_ROOT}/skills/public/." "${dst}/"
       echo "Installed all Codex skills to: ${dst}"
       ;;
-    sg-news-brief|sg-govtech-announcement-scanner|sg-open-data-storyteller|sg-school-admission-orchestrator|sg-school-eligibility-checker|sg-school-discovery-finder|sg-school-finder-orchestrator)
+    sg-news-brief|sg-govtech-announcement-scanner|sg-open-data-storyteller|sg-transit-service-tracker|sg-transit-live-eta-tracker|sg-school-admission-orchestrator|sg-school-eligibility-checker|sg-school-discovery-finder|sg-school-finder-orchestrator)
       cp -R "${REPO_ROOT}/skills/public/${skill}" "${dst}/"
       echo "Installed Codex skill to: ${dst}/${skill}"
       ;;
     *)
       echo "Unknown skill for codex: ${skill}"
-      echo "Valid options: sg-news-brief, sg-govtech-announcement-scanner, sg-open-data-storyteller, sg-school-admission-orchestrator, sg-school-eligibility-checker, sg-school-discovery-finder, sg-school-finder-orchestrator, all"
+      echo "Valid options: sg-news-brief, sg-govtech-announcement-scanner, sg-open-data-storyteller, sg-transit-service-tracker, sg-transit-live-eta-tracker, sg-school-admission-orchestrator, sg-school-eligibility-checker, sg-school-discovery-finder, sg-school-finder-orchestrator, all"
       exit 1
       ;;
   esac
