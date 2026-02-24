@@ -20,7 +20,8 @@ Skill version: v2.2
   - Publish date: February 21, 2026
   - Confidence: High
   - Why it matters: Residents and businesses can plan compliance and applications using confirmed dates.
-  - Source: https://example.gov.sg/policy-update
+  - Primary source: https://example.gov.sg/policy-update
+  - Secondary source: https://example.com/independent-policy-coverage
 
 ### Economy and business
 
@@ -30,7 +31,8 @@ Skill version: v2.2
   - Confidence: Medium
   - Why it matters: Reduces implementation risk and near-term capex pressure for qualifying SMEs.
   - Inference: If adoption rates rise, near-term software services demand may improve.
-  - Source: https://example.com/sme-program
+  - Primary source: https://example.com/sme-program
+  - Secondary source: N/A
 
 ### Transport and infrastructure
 
@@ -39,7 +41,8 @@ Skill version: v2.2
   - Publish date: February 20, 2026
   - Confidence: Medium
   - Why it matters: Reliability changes directly affect commuting time and business punctuality.
-  - Source: https://example.com/transport-roadmap
+  - Primary source: https://example.com/transport-roadmap
+  - Secondary source: N/A
 
 ## Watchlist
 
@@ -47,7 +50,8 @@ Skill version: v2.2
 - Monitor transport reliability metrics in the next weekly update.
 - Social media claim about further subsidy expansion (unconfirmed).
   - Confidence: Low
-  - Source: https://example.com/unconfirmed-post
+  - Primary source: https://example.com/unconfirmed-post
+  - Secondary source: N/A
 
 ## Notes
 

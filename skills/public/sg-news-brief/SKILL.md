@@ -30,6 +30,10 @@ If user intent is unclear, default to:
 - General Singapore news
 - Standard length
 
+Time-window guardrail:
+- For `last 24 hours`, keep strict boundary coverage only.
+- Do not silently widen to 7 days. If fewer than 3 verified items exist, return a shorter brief with an explicit constraint note.
+
 ### 2. Gather candidate stories
 
 Use high-trust Singapore-first sources first. Include regional/global outlets only when they add important context for Singapore.
@@ -49,6 +53,7 @@ Apply these checks:
 - Enforce hard gate: if no credible source URL is available, exclude the story.
 - Enforce hard gate: if a source URL is inaccessible or does not contain the claimed fact, exclude the story.
 - Require full clickable URLs (`https://...`) in output, not bare domains.
+- Enforce hard gate: do not use homepage/section/tag URLs (for example, a site front page or category page) as story evidence links.
 - Prefer stories with direct primary statements where possible.
 - Use absolute dates (for example: `February 21, 2026`) instead of only relative labels like "today."
 - Validate both event date and publish date. If either date is unclear, mark `Medium` at most or move to `Watchlist`.
@@ -61,7 +66,7 @@ Do not present speculation as confirmed fact.
 
 ### 3a. Confidence rubric
 
-- High: direct official source plus at least one independent reputable source that agrees on core facts.
+- High: direct official/primary source (Tier 1) plus at least one independent reputable source that agrees on core facts. Both URLs must be shown.
 - Medium: one reputable source with clear reporting but limited corroboration, and no contradiction from primary sources.
 - Low: incomplete verification, conflicting details, or indirect sourcing.
 
@@ -120,7 +125,8 @@ Skill version: <v2.2>
   - Publish date: <Month DD, YYYY>
   - Confidence: <High|Medium|Low>
   - Why it matters: <1 sentence>
-  - Source: <https://full-link-to-article-or-statement>
+  - Primary source: <https://full-link-to-primary-source>
+  - Secondary source: <https://full-link-to-independent-source or N/A (required for High)>
 
 ## Watchlist
 - <emerging issue to monitor next update>
@@ -130,7 +136,8 @@ Skill version: <v2.2>
 ```
 
 If there are fewer than 3 fully verified stories for the requested period:
-- Explicitly widen the period (for example from 24 hours to 7 days) only if user intent allows.
+- For strict requests (for example: last 24 hours), deliver a shorter brief with an explicit verification constraint note.
+- Widen the period only when user explicitly allows it.
 - Or deliver a shorter brief and explain the verification constraint.
 - Never fill missing slots with weakly verified claims.
 
@@ -140,6 +147,7 @@ If there are fewer than 3 fully verified stories for the requested period:
 - Avoid duplicate stories across categories.
 - Separate facts from interpretation.
 - Include source links for every included story.
+- Never use homepage/section/tag links as evidence URLs for included stories.
 - Include explicit event date and publish date for every included story, or mark uncertainty.
 - End with a short "watch next" view when relevant.
 - Never include an uncited claim as a confirmed fact.
