@@ -15,6 +15,7 @@ It orchestrates three existing skills in sequence:
 
 Use `references/intake-template.md` to collect required inputs.
 Use `references/output-contract.md` to enforce final output structure.
+Run `references/qa-checklist.md` before final output.
 
 ## Workflow
 

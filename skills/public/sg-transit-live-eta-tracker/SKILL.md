@@ -26,12 +26,14 @@ Every user should use their own LTA DataMall key.
    - `echo 'export LTA_ACCOUNT_KEY="<your-key>"' >> ~/.zshrc`
    - `source ~/.zshrc`
 4. Quick check:
-   - `python3 scripts/fetch_bus_arrival.py --bus-stop 83139`
+   - `python3 skills/public/sg-transit-live-eta-tracker/scripts/fetch_bus_arrival.py --bus-stop 83139`
+   - If you are already in this skill folder, `python3 scripts/fetch_bus_arrival.py --bus-stop 83139` also works.
 
 If key is missing or invalid:
 - Report `Bus ETA unavailable: missing/invalid LTA_ACCOUNT_KEY`.
 - Continue with rail alerts and advisory sources.
 - Put bus ETA gaps in `Caveats`; do not claim "no delay" for bus services.
+- Treat HTTP `401/403` from DataMall as invalid key and report it explicitly.
 
 ## Workflow
 

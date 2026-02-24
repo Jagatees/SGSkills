@@ -23,10 +23,11 @@ source ~/.zshrc
 4. Verify:
 
 ```bash
-python3 scripts/fetch_bus_arrival.py --bus-stop 83139
+python3 skills/public/sg-transit-live-eta-tracker/scripts/fetch_bus_arrival.py --bus-stop 83139
 ```
 
 If verification fails, check key value/quoting and reopen terminal.
+If you are already in the skill folder, `python3 scripts/fetch_bus_arrival.py --bus-stop 83139` also works.
 
 ## Bus arrival endpoint
 
@@ -54,4 +55,5 @@ If an alert has no clear timestamp or URL, exclude it.
 ## Runtime notes
 
 - Treat API/network failures as partial coverage, not "no incident."
+- Treat HTTP `401/403` responses as invalid key configuration.
 - Keep source payload snippets brief; summarize, do not paste raw large JSON.

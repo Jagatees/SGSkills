@@ -13,11 +13,18 @@ import argparse
 import json
 import os
 import sys
+import urllib.error
 import urllib.parse
 import urllib.request
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
+
+try:
+    from zoneinfo import ZoneInfo
+except Exception:  # pragma: no cover
+    ZoneInfo = None
 
 API_URL = "https://datamall2.mytransport.sg/ltaodataservice/v3/BusArrival"
+SGT_TZ = ZoneInfo("Asia/Singapore") if ZoneInfo else timezone(timedelta(hours=8))
 
 
 def parse_args() -> argparse.Namespace:
@@ -29,7 +36,7 @@ def parse_args() -> argparse.Namespace:
 
 
 def iso_now() -> str:
-    return datetime.now(timezone.utc).astimezone().isoformat(timespec="seconds")
+    return datetime.now(timezone.utc).astimezone(SGT_TZ).isoformat(timespec="seconds")
 
 
 def fetch(bus_stop: str, service: str | None, timeout: int) -> dict:
@@ -43,8 +50,13 @@ def fetch(bus_stop: str, service: str | None, timeout: int) -> dict:
     url = f"{API_URL}?{urllib.parse.urlencode(query)}"
 
     req = urllib.request.Request(url, headers={"AccountKey": account_key})
-    with urllib.request.urlopen(req, timeout=timeout) as resp:
-        body = resp.read().decode("utf-8")
+    try:
+        with urllib.request.urlopen(req, timeout=timeout) as resp:
+            body = resp.read().decode("utf-8")
+    except urllib.error.HTTPError as exc:
+        if exc.code in (401, 403):
+            raise RuntimeError("Invalid LTA_ACCOUNT_KEY (HTTP 401/403).") from exc
+        raise
     return json.loads(body)
 
 
