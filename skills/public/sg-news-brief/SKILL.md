@@ -59,21 +59,6 @@ Apply these checks:
 
 Do not present speculation as confirmed fact.
 
-### 3b. Claim-level evidence table (required before final output)
-
-Before writing the brief, build a compact internal table for every included story:
-
-- Claim
-- Primary source URL
-- Secondary source URL (if any)
-- Verification status (`Verified` | `Partially verified` | `Unverified`)
-- Date check (`Pass` | `Fail`)
-
-Rules:
-- Only `Verified` claims can appear in `Top Headlines` or `By Category`.
-- `Partially verified` items can appear only with `Confidence: Medium`.
-- `Unverified` items must be excluded (or moved to `Watchlist` with `Confidence: Low`).
-
 ### 3a. Confidence rubric
 
 - High: direct official source plus at least one independent reputable source that agrees on core facts.
@@ -81,6 +66,22 @@ Rules:
 - Low: incomplete verification, conflicting details, or indirect sourcing.
 
 Low-confidence items can appear only in `Watchlist` and must be labeled clearly.
+
+### 3b. Claim-level evidence table (required before final output)
+
+Before writing the brief, build a compact internal table for every included story:
+
+- Claim
+- Primary source URL
+- Secondary source URL (if any)
+- Evidence snippet (short supporting quote/fact)
+- Verification status (`Verified` | `Partially verified` | `Unverified`)
+- Date check (`Pass` | `Fail`)
+
+Rules:
+- Only `Verified` claims can appear in `Top Headlines` or `By Category`.
+- `Partially verified` items can appear only with `Confidence: Medium` and explicit uncertainty wording.
+- `Unverified` items must be excluded (or moved to `Watchlist` with `Confidence: Low`).
 
 ### 4. Categorize and rank
 
@@ -106,7 +107,7 @@ Use this format:
 Period: <start date> to <end date>
 Updated: <timestamp with timezone>
 Data freshness: <when sources were checked>
-Skill version: <v2.1>
+Skill version: <v2.2>
 
 ## Top Headlines
 1. <headline> - <one-line why it matters>
@@ -115,6 +116,8 @@ Skill version: <v2.1>
 ## By Category
 ### <category>
 - <headline> (<source>, <publish date>): <2-3 sentence summary>
+  - Event date: <Month DD, YYYY or Unknown>
+  - Publish date: <Month DD, YYYY>
   - Confidence: <High|Medium|Low>
   - Why it matters: <1 sentence>
   - Source: <https://full-link-to-article-or-statement>
@@ -137,6 +140,7 @@ If there are fewer than 3 fully verified stories for the requested period:
 - Avoid duplicate stories across categories.
 - Separate facts from interpretation.
 - Include source links for every included story.
+- Include explicit event date and publish date for every included story, or mark uncertainty.
 - End with a short "watch next" view when relevant.
 - Never include an uncited claim as a confirmed fact.
 - Use `Inference:` prefix for analytical statements not directly confirmed by sources.

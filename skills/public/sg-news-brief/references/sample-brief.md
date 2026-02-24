@@ -3,7 +3,7 @@
 Period: February 20, 2026 to February 21, 2026  
 Updated: February 21, 2026, 7:00 PM SGT
 Data freshness: Sources checked on February 21, 2026, 6:50 PM SGT
-Skill version: v2.1
+Skill version: v2.2
 
 ## Top Headlines
 
@@ -16,6 +16,8 @@ Skill version: v2.1
 ### Public policy and government
 
 - Agency issues updated implementation timeline for a public service change (Official agency release, February 21, 2026): The update clarifies phase-in dates and eligibility criteria for affected groups. The agency states transitional support will run through the rollout period.
+  - Event date: February 21, 2026
+  - Publish date: February 21, 2026
   - Confidence: High
   - Why it matters: Residents and businesses can plan compliance and applications using confirmed dates.
   - Source: https://example.gov.sg/policy-update
@@ -23,6 +25,8 @@ Skill version: v2.1
 ### Economy and business
 
 - SMEs eligible for expanded co-funding under a productivity program (Business newsroom, February 21, 2026): The program increases support tiers for selected technology adoption categories and includes application guidance for smaller firms.
+  - Event date: February 21, 2026
+  - Publish date: February 21, 2026
   - Confidence: Medium
   - Why it matters: Reduces implementation risk and near-term capex pressure for qualifying SMEs.
   - Inference: If adoption rates rise, near-term software services demand may improve.
@@ -31,6 +35,8 @@ Skill version: v2.1
 ### Transport and infrastructure
 
 - Operator publishes incident reduction roadmap for key lines (Transport newsroom, February 20, 2026): The plan includes maintenance windows, fleet checks, and commuter communication upgrades.
+  - Event date: February 20, 2026
+  - Publish date: February 20, 2026
   - Confidence: Medium
   - Why it matters: Reliability changes directly affect commuting time and business punctuality.
   - Source: https://example.com/transport-roadmap

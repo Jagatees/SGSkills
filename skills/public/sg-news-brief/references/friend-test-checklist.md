@@ -20,6 +20,7 @@ Use this checklist to validate whether the skill is production-ready.
 - Every included story has a confidence label.
 - No low-confidence item appears outside `Watchlist`.
 - `High` confidence appears only when official + independent corroborating source are present.
+- `Partially verified` items, if included, are marked `Confidence: Medium` with explicit uncertainty wording.
 - Policy/legal status claims are backed by at least one primary source URL.
 - Any non-confirmed analysis line uses the `Inference:` prefix.
 - Tone changes correctly for audience mode.
@@ -29,6 +30,6 @@ Use this checklist to validate whether the skill is production-ready.
 
 ## Scoring
 
-- 12/12 checks pass: Ready for wider sharing.
-- 10-11 checks pass: Usable, improve weak spots and retest.
-- 0-9 checks pass: Revise skill instructions before sharing.
+- 15/15 checks pass: Ready for wider sharing.
+- 12-14 checks pass: Usable, improve weak spots and retest.
+- 0-11 checks pass: Revise skill instructions before sharing.
