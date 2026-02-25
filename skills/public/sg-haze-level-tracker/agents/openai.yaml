@@ -1,4 +1,0 @@
-interface:
-  display_name: "SG Haze Level Tracker"
-  short_description: "Fetch SG PSI haze readings by region with risk bands and source links"
-  default_prompt: "Use sg-haze-level-tracker to check Singapore haze levels now and return national and regional PSI readings with risk bands and source links."

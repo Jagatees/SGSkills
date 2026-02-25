@@ -1,4 +1,0 @@
-interface:
-  display_name: "SG Transit Service Tracker"
-  short_description: "Track Singapore MRT and bus disruptions, recoveries, and advisories in a structured feed"
-  default_prompt: "Scan recent official Singapore MRT and bus service updates and return a structured feed with change type, impact, confidence, and source links."
