@@ -1,0 +1,23 @@
+# SG Skill Creator Publish Checklist
+
+- [ ] Skill passes quality-bar checks.
+- [ ] Folder structure is complete.
+- [ ] Commit message is clear and task-scoped.
+- [ ] Safety review completed (misuse scenarios reviewed).
+- [ ] Risk tier is recorded and justified.
+- [ ] Regulated-domain status is recorded and justified.
+- [ ] Refusal behavior examples are included.
+- [ ] Refusal/escalation test prompts are included (>=3 refuse, >=2 escalate).
+- [ ] `references/safety-evals.md` is included or equivalent tests are documented.
+- [ ] If `HIGH` risk: human approval recorded before publish.
+- [ ] If regulated domain: human approval recorded before publish.
+- [ ] `references/review-contacts.md` exists and approver roles are mapped.
+- [ ] Election/sensitive-period handling is documented when relevant.
+- [ ] Source trust tiers and verification fallback are documented.
+- [ ] Singpass/MyInfo misuse protections are documented.
+- [ ] Data export controls are documented for sensitive data skills.
+- [ ] `references/safety-assumptions.md` is included for safety-critical skills.
+- [ ] Recertification cadence is set for safety-critical skills (default 90 days).
+- [ ] If showcased on website: tags/category render correctly.
+- [ ] If orchestrator: child-skill links are valid.
+- [ ] If non-codex ports are needed: add/update port artifacts.
