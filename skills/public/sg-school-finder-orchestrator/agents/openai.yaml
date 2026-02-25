@@ -1,4 +1,0 @@
-interface:
-  display_name: "SG School Finder Orchestrator"
-  short_description: "Run eligibility, discovery, and shortlist in one school-finding flow"
-  default_prompt: "Run the full Singapore school-finding workflow in one go: eligibility check, candidate discovery, and final shortlist with tradeoffs and official source links."

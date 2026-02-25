@@ -1,4 +1,0 @@
-interface:
-  display_name: "SG GovTech Announcement Scanner"
-  short_description: "Extract official Singapore government updates into a structured what-changed feed"
-  default_prompt: "Scan recent GovTech/OGP and relevant agency announcements and return a structured update feed with change type, impact, confidence, and source links."

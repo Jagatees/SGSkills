@@ -1,4 +1,0 @@
-interface:
-  display_name: "SG News Brief"
-  short_description: "Create concise Singapore news digests with source links"
-  default_prompt: "Summarize recent Singapore news into a brief with categories, key developments, and source links."
