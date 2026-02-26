@@ -18,15 +18,8 @@ Most generic AI prompts miss Singapore-specific context and source reliability n
 All public skills live under `skills/public/`.
 
 Examples currently included:
-- `sg-govtech-announcement-scanner`
-- `sg-news-brief`
-- `sg-open-data-storyteller`
-- `sg-transit-service-tracker`
-- `sg-transit-live-eta-tracker`
-- `sg-school-admission-orchestrator`
-- `sg-school-eligibility-checker`
-- `sg-school-discovery-finder`
-- `sg-school-finder-orchestrator`
+- `sg-skill-creator`
+- `sg-weather-now`
 
 As new Singapore-context skills are added, they are part of this same collection.
 
@@ -50,11 +43,9 @@ ports/
 
 ```bash
 mkdir -p ~/.codex/skills
-cp -R skills/public/sg-news-brief ~/.codex/skills/
+cp -R skills/public/sg-skill-creator ~/.codex/skills/
 # or
-cp -R skills/public/sg-govtech-announcement-scanner ~/.codex/skills/
-# or
-cp -R skills/public/sg-open-data-storyteller ~/.codex/skills/
+cp -R skills/public/sg-weather-now ~/.codex/skills/
 ```
 
 ### Install all public skills
@@ -77,28 +68,14 @@ curl -fsSL https://raw.githubusercontent.com/Jagatees/SGSkills/main/ports/instal
 Single-skill variants for copy buttons:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/Jagatees/SGSkills/main/ports/install-from-github.sh | bash -s -- sg-news-brief
-curl -fsSL https://raw.githubusercontent.com/Jagatees/SGSkills/main/ports/install-from-github.sh | bash -s -- sg-govtech-announcement-scanner
-curl -fsSL https://raw.githubusercontent.com/Jagatees/SGSkills/main/ports/install-from-github.sh | bash -s -- sg-open-data-storyteller
-curl -fsSL https://raw.githubusercontent.com/Jagatees/SGSkills/main/ports/install-from-github.sh | bash -s -- sg-transit-service-tracker
-curl -fsSL https://raw.githubusercontent.com/Jagatees/SGSkills/main/ports/install-from-github.sh | bash -s -- sg-transit-live-eta-tracker
-curl -fsSL https://raw.githubusercontent.com/Jagatees/SGSkills/main/ports/install-from-github.sh | bash -s -- sg-school-admission-orchestrator
-curl -fsSL https://raw.githubusercontent.com/Jagatees/SGSkills/main/ports/install-from-github.sh | bash -s -- sg-school-eligibility-checker
-curl -fsSL https://raw.githubusercontent.com/Jagatees/SGSkills/main/ports/install-from-github.sh | bash -s -- sg-school-discovery-finder
-curl -fsSL https://raw.githubusercontent.com/Jagatees/SGSkills/main/ports/install-from-github.sh | bash -s -- sg-school-finder-orchestrator
+curl -fsSL https://raw.githubusercontent.com/Jagatees/SGSkills/main/ports/install-from-github.sh | bash -s -- sg-skill-creator
+curl -fsSL https://raw.githubusercontent.com/Jagatees/SGSkills/main/ports/install-from-github.sh | bash -s -- sg-weather-now
 ```
 
 ## Example prompts
 
-- `Use $sg-govtech-announcement-scanner for the last 7 days and show change type + impact + source links.`
-- `Use $sg-news-brief and give me a Singapore news brief for the last 24 hours.`
-- `Use $sg-open-data-storyteller on https://data.gov.sg/datasets?topics=education&resultId=d_3c55210de27fcccda2ed0c63fdd2b352 and give me a standard brief for policy teams.`
-- `Use $sg-transit-service-tracker for the last 24 hours and highlight disruptions/recoveries with affected lines and source links.`
-- `Use $sg-transit-live-eta-tracker for my stops 83139 and 84009 plus NSL updates, then show delay risk for the next 60 minutes.`
-- `Use $sg-school-admission-orchestrator to shortlist 5 suitable primary schools near my area and provide tradeoffs with official source links.`
-- `Use $sg-school-eligibility-checker to verify school admission baseline eligibility and provide a handoff payload for shortlist generation.`
-- `Use $sg-school-discovery-finder to generate a ranked candidate school list by stage and location before final shortlist scoring.`
-- `Use $sg-school-finder-orchestrator to run the full school workflow in one command (eligibility -> discovery -> shortlist).`
+- `Use $sg-weather-now and summarize Singapore weather now, next 2 hours, and next 24 hours with confidence labels and official source links.`
+- `Use $sg-skill-creator to create a new Singapore-first skill with trusted-source rules, confidence labels, and website-ready metadata.`
 
 ## Cross-platform ports
 
@@ -118,9 +95,9 @@ chmod +x ports/install.sh
 Single-skill examples:
 
 ```bash
-./ports/install.sh claude ~/my-project sg-school-eligibility-checker
-./ports/install.sh gemini ~/my-project sg-school-eligibility-checker
-./ports/install.sh universal ~/Desktop sg-school-eligibility-checker
+./ports/install.sh claude ~/my-project sg-weather-now
+./ports/install.sh gemini ~/my-project sg-weather-now
+./ports/install.sh universal ~/Desktop sg-weather-now
 ```
 
 ### Convert any skill to other LLM formats
@@ -130,7 +107,7 @@ Regenerate Claude + Gemini + Universal adapters from source skills:
 ```bash
 ./ports/scripts/convert-skill.sh all
 # or one skill
-./ports/scripts/convert-skill.sh sg-school-admission-orchestrator
+./ports/scripts/convert-skill.sh sg-skill-creator
 ```
 
 ## Documentation
