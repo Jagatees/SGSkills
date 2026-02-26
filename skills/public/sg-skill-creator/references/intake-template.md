@@ -11,6 +11,8 @@
 - Optional inputs:
 - Output format:
 - Confidence labels needed? (yes/no):
+- Guided mode (`Quick`/`Standard`/`Strict`):
+- Preferred preview style (if known):
 
 ## Sources and quality
 - Primary source types:
@@ -37,6 +39,8 @@
 ## Packaging
 - Reference files required:
 - Include `references/safety-assumptions.md`? (yes/no):
+- Include `references/hard-gates.md`? (yes/no):
+- Include `references/output-preview-modes.md`? (yes/no):
 - Ports needed now (codex/claude/gemini/universal):
 - Should this skill appear on website showcase? (yes/no):
 - Frontmatter `review_due` date (YYYY-MM-DD):
