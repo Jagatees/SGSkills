@@ -28,18 +28,22 @@ Examples:
 
 ```bash
 ./ports/install.sh codex
+./ports/install.sh codex . sg-skill-creator
 ./ports/install.sh codex . sg-open-data-storyteller
 ./ports/install.sh codex . sg-govtech-announcement-scanner
 ./ports/install.sh codex . sg-transit-service-tracker
 ./ports/install.sh codex . sg-transit-live-eta-tracker
 ./ports/install.sh claude ~/my-project sg-news-brief
 ./ports/install.sh claude ~/my-project sg-open-data-storyteller
+./ports/install.sh claude ~/my-project sg-skill-creator
 ./ports/install.sh claude ~/my-project all
 ./ports/install.sh gemini ~/my-project sg-news-brief
 ./ports/install.sh gemini ~/my-project sg-open-data-storyteller
+./ports/install.sh gemini ~/my-project sg-skill-creator
 ./ports/install.sh gemini ~/my-project all
 ./ports/install.sh universal ~/Desktop sg-news-brief
 ./ports/install.sh universal ~/Desktop sg-open-data-storyteller
+./ports/install.sh universal ~/Desktop sg-skill-creator
 ./ports/install.sh universal ~/Desktop all
 ```
 
@@ -63,6 +67,7 @@ Install one skill:
 
 ```bash
 ./ports/install.sh codex . sg-news-brief
+./ports/install.sh codex . sg-skill-creator
 ./ports/install.sh codex . sg-govtech-announcement-scanner
 ./ports/install.sh codex . sg-open-data-storyteller
 ./ports/install.sh codex . sg-transit-service-tracker
@@ -73,6 +78,7 @@ Install from a website copy button (no local clone needed):
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/Jagatees/SGSkills/main/ports/install-from-github.sh | bash -s -- all
+curl -fsSL https://raw.githubusercontent.com/Jagatees/SGSkills/main/ports/install-from-github.sh | bash -s -- sg-skill-creator
 curl -fsSL https://raw.githubusercontent.com/Jagatees/SGSkills/main/ports/install-from-github.sh | bash -s -- sg-news-brief
 curl -fsSL https://raw.githubusercontent.com/Jagatees/SGSkills/main/ports/install-from-github.sh | bash -s -- sg-govtech-announcement-scanner
 curl -fsSL https://raw.githubusercontent.com/Jagatees/SGSkills/main/ports/install-from-github.sh | bash -s -- sg-open-data-storyteller
@@ -90,6 +96,7 @@ Use in Codex:
 ## Claude / Gemini / Universal
 
 Supported skills:
+- `sg-skill-creator`
 - `sg-news-brief`
 - `sg-govtech-announcement-scanner`
 - `sg-open-data-storyteller`
@@ -105,12 +112,15 @@ Install one skill:
 ```bash
 ./ports/install.sh claude ~/my-project sg-news-brief
 ./ports/install.sh claude ~/my-project sg-open-data-storyteller
+./ports/install.sh claude ~/my-project sg-skill-creator
 
 ./ports/install.sh gemini ~/my-project sg-news-brief
 ./ports/install.sh gemini ~/my-project sg-open-data-storyteller
+./ports/install.sh gemini ~/my-project sg-skill-creator
 
 ./ports/install.sh universal ~/Desktop sg-news-brief
 ./ports/install.sh universal ~/Desktop sg-open-data-storyteller
+./ports/install.sh universal ~/Desktop sg-skill-creator
 ```
 
 Install all skills:

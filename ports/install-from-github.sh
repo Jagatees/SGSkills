@@ -6,11 +6,11 @@ REPO_REF="${REPO_REF:-main}"
 SKILL="${1:-all}"
 
 case "${SKILL}" in
-  all|sg-news-brief|sg-govtech-announcement-scanner|sg-open-data-storyteller|sg-transit-service-tracker|sg-transit-live-eta-tracker|sg-school-admission-orchestrator|sg-school-eligibility-checker|sg-school-discovery-finder|sg-school-finder-orchestrator)
+  all|sg-skill-creator|sg-news-brief|sg-govtech-announcement-scanner|sg-open-data-storyteller|sg-transit-service-tracker|sg-transit-live-eta-tracker|sg-school-admission-orchestrator|sg-school-eligibility-checker|sg-school-discovery-finder|sg-school-finder-orchestrator)
     ;;
   *)
     echo "Unknown skill: ${SKILL}"
-    echo "Valid options: all, sg-news-brief, sg-govtech-announcement-scanner, sg-open-data-storyteller, sg-transit-service-tracker, sg-transit-live-eta-tracker, sg-school-admission-orchestrator, sg-school-eligibility-checker, sg-school-discovery-finder, sg-school-finder-orchestrator"
+    echo "Valid options: all, sg-skill-creator, sg-news-brief, sg-govtech-announcement-scanner, sg-open-data-storyteller, sg-transit-service-tracker, sg-transit-live-eta-tracker, sg-school-admission-orchestrator, sg-school-eligibility-checker, sg-school-discovery-finder, sg-school-finder-orchestrator"
     exit 1
     ;;
 esac
