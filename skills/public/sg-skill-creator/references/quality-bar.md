@@ -20,6 +20,8 @@
 - [ ] Missing-input behavior is defined.
 - [ ] Confidence/caveat behavior is defined for uncertain outputs.
 - [ ] Output format and quality checks are explicit.
+- [ ] Guided mode behavior (`Quick`/`Standard`/`Strict`) is defined.
+- [ ] Preview-first selection exists (2-3 mini output previews before full output).
 
 ## Safety (blocking)
 - [ ] Risk tier (`LOW`/`MEDIUM`/`HIGH`) is recorded.
@@ -35,7 +37,9 @@
 - [ ] Election/sensitive-period mode behavior is defined when applicable.
 - [ ] Sensitive data export controls are defined (destination + access control) or export is disallowed.
 - [ ] Refusal/escalation tests exist (>=3 refuse, >=2 escalate prompts).
+- [ ] Proceed-with-caveat tests exist (>=2 prompts).
 - [ ] `references/safety-evals.md` exists or equivalent tests are documented.
+- [ ] Hard gates are explicit and enforced (missing URL, single-source high-impact, inaccessible evidence).
 
 ## Delivery
 - [ ] `agents/openai.yaml` exists and is usable.

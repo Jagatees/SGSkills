@@ -18,6 +18,7 @@ Targets:
 Arguments:
   destination   Optional for claude/gemini/universal (defaults to current directory)
   skill         Optional. One of:
+                - sg-skill-creator
                 - sg-news-brief
                 - sg-govtech-announcement-scanner
                 - sg-open-data-storyteller
@@ -27,10 +28,12 @@ Arguments:
                 - sg-school-eligibility-checker
                 - sg-school-discovery-finder
                 - sg-school-finder-orchestrator
+                - sg-weather-now
                 - all (default for codex, claude, gemini, universal)
 
 Examples:
   ./ports/install.sh codex
+  ./ports/install.sh codex . sg-skill-creator
   ./ports/install.sh codex . sg-news-brief
   ./ports/install.sh codex . sg-govtech-announcement-scanner
   ./ports/install.sh codex . sg-open-data-storyteller
@@ -40,6 +43,7 @@ Examples:
   ./ports/install.sh codex . sg-school-eligibility-checker
   ./ports/install.sh codex . sg-school-discovery-finder
   ./ports/install.sh codex . sg-school-finder-orchestrator
+  ./ports/install.sh codex . sg-weather-now
   ./ports/install.sh claude ~/my-project sg-open-data-storyteller
   ./ports/install.sh claude ~/my-project all
   ./ports/install.sh gemini ~/my-project sg-open-data-storyteller
@@ -67,6 +71,7 @@ if [[ -z "${skill}" ]]; then
 fi
 
 ALL_SKILLS=(
+  "sg-skill-creator"
   "sg-news-brief"
   "sg-govtech-announcement-scanner"
   "sg-open-data-storyteller"
@@ -76,6 +81,7 @@ ALL_SKILLS=(
   "sg-school-eligibility-checker"
   "sg-school-discovery-finder"
   "sg-school-finder-orchestrator"
+  "sg-weather-now"
 )
 
 install_codex() {
@@ -87,13 +93,13 @@ install_codex() {
       cp -R "${REPO_ROOT}/skills/public/." "${dst}/"
       echo "Installed all Codex skills to: ${dst}"
       ;;
-    sg-news-brief|sg-govtech-announcement-scanner|sg-open-data-storyteller|sg-transit-service-tracker|sg-transit-live-eta-tracker|sg-school-admission-orchestrator|sg-school-eligibility-checker|sg-school-discovery-finder|sg-school-finder-orchestrator)
+    sg-skill-creator|sg-news-brief|sg-govtech-announcement-scanner|sg-open-data-storyteller|sg-transit-service-tracker|sg-transit-live-eta-tracker|sg-school-admission-orchestrator|sg-school-eligibility-checker|sg-school-discovery-finder|sg-school-finder-orchestrator|sg-weather-now)
       cp -R "${REPO_ROOT}/skills/public/${skill}" "${dst}/"
       echo "Installed Codex skill to: ${dst}/${skill}"
       ;;
     *)
       echo "Unknown skill for codex: ${skill}"
-      echo "Valid options: sg-news-brief, sg-govtech-announcement-scanner, sg-open-data-storyteller, sg-transit-service-tracker, sg-transit-live-eta-tracker, sg-school-admission-orchestrator, sg-school-eligibility-checker, sg-school-discovery-finder, sg-school-finder-orchestrator, all"
+      echo "Valid options: sg-skill-creator, sg-news-brief, sg-govtech-announcement-scanner, sg-open-data-storyteller, sg-transit-service-tracker, sg-transit-live-eta-tracker, sg-school-admission-orchestrator, sg-school-eligibility-checker, sg-school-discovery-finder, sg-school-finder-orchestrator, sg-weather-now, all"
       exit 1
       ;;
   esac

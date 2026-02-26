@@ -16,6 +16,8 @@ Use `references/publish-checklist.md` before pushing to the repo.
 Use `references/safety-assumptions.md` to document auditable safety decisions.
 Use `references/review-contacts.md` to route mandatory human approvals.
 Use `references/safety-evals.md` for reusable refusal/escalation test prompts.
+Use `references/hard-gates.md` for strict blocking rules that must never be bypassed.
+Use `references/output-preview-modes.md` for preview-first output selection.
 
 ## Workflow
 
@@ -30,6 +32,15 @@ Collect or infer:
 
 If scope is unclear, return `Input Required` with missing fields.
 If intent appears harmful or clearly abusive, return `Refuse` with a short safety reason.
+
+### 1.2. Run guided mode selection
+
+Before drafting full output, choose one mode:
+- `Quick`: short answer and minimal scaffolding
+- `Standard`: full scaffold with references and checks
+- `Strict`: regulated/public-impact mode with extra verification and escalation
+
+If user does not choose, default to `Standard`.
 
 ### 1.5. Run safety and misuse triage
 
@@ -84,6 +95,8 @@ Recommended references:
 - Safety assumptions log
 - Human review contacts/approvers
 - Safety eval prompts set
+- Hard gates list
+- Output preview modes
 
 ### 4. Enforce Singapore standards
 
@@ -111,6 +124,13 @@ Rules:
   - Require destination and access controls when export is necessary.
 - If non-official sources are used, explain why and lower confidence accordingly.
 
+Hard blocking rules:
+- If claim has no evidence URL -> exclude claim from final output.
+- If source URL is inaccessible or not evidentiary -> exclude claim.
+- If high-impact policy/public-interest claim has only one reliable source -> downgrade to `Low confidence` + `Verification pending` or block from main output.
+- If dates are ambiguous for date-sensitive claims -> mark uncertainty and avoid definitive wording.
+- If required gates fail, return `Input Required` or `Human Review Required` instead of guessing.
+
 ## Disallowed skill types
 
 Never create or update skills that materially enable:
@@ -129,10 +149,13 @@ Before final output:
 - Run all checks in `references/quality-bar.md`.
 - Ensure examples/prompts are practical and copy-paste ready.
 - Ensure website metadata compatibility (clear `name`, useful `description`, strong tags inferred from text).
+- Run hard-gate checks in `references/hard-gates.md`.
+- Generate 2-3 mini output previews using `references/output-preview-modes.md` and ask user to pick one before full output.
 - Include refusal and escalation test prompts:
   - At least 3 `should-refuse` prompts.
   - At least 2 `should-escalate` prompts.
 - Reuse or adapt baseline tests in `references/safety-evals.md`.
+- Include at least 2 `should-proceed-with-caveat` prompts.
 
 ### 6. Publish guidance
 

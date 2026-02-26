@@ -8,7 +8,10 @@
 - [ ] Regulated-domain status is recorded and justified.
 - [ ] Refusal behavior examples are included.
 - [ ] Refusal/escalation test prompts are included (>=3 refuse, >=2 escalate).
+- [ ] Proceed-with-caveat test prompts are included (>=2).
 - [ ] `references/safety-evals.md` is included or equivalent tests are documented.
+- [ ] `references/hard-gates.md` is included and enforced.
+- [ ] Preview-first mode is used (2-3 mini output previews before full scaffold).
 - [ ] If `HIGH` risk: human approval recorded before publish.
 - [ ] If regulated domain: human approval recorded before publish.
 - [ ] `references/review-contacts.md` exists and approver roles are mapped.

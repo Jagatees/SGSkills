@@ -1,0 +1,101 @@
+---
+name: sg-weather-now
+description: Provide Singapore weather nowcasts and advisories using official sources, absolute timestamps, and confidence labels.
+jurisdiction: SG
+review_due: 2026-05-27
+---
+
+# SG Weather Now
+
+## Overview
+
+Use this skill to answer Singapore weather-now requests for current conditions, short-range forecasts, and advisories.
+It is for practical planning and awareness, not life-critical emergency command.
+
+Read these references before running:
+- `references/intake.md`
+- `references/output-template.md`
+- `references/source-map.md`
+- `references/qa-checklist.md`
+- `references/safety-assumptions.md`
+- `references/review-contacts.md`
+- `references/safety-evals.md`
+
+## Workflow
+
+### 1. Confirm request and scope
+
+Capture or infer:
+- Geography: Singapore-wide or area-specific (North/South/East/West/Central)
+- Time horizon: now, next 2 hours, next 24 hours
+- Output goal: commute planning, event planning, general awareness
+
+If missing, default to: Singapore-wide, next 2 hours + next 24 hours, concise summary.
+
+### 2. Safety and misuse triage
+
+Record:
+- Risk tier: `MEDIUM`
+- Regulated domain: `No`
+- Sensitive-period mode: `No` unless severe weather or public safety incident is active
+
+Blocking behavior:
+- Return `Refuse` for harmful/deceptive requests.
+- Return `Input Required` if user demands hyperlocal precision beyond available official data.
+- Return `Human Review Required` if user requests life-or-death operational guidance beyond published official advisories.
+- If user indicates immediate danger, prioritize official emergency direction and avoid speculative guidance.
+
+### 3. Gather sources with trust tiers
+
+Use this order:
+1. Tier 1 (primary): Meteorological Service Singapore (MSS) and NEA weather warning channels.
+2. Tier 2: Official operator/government channels relaying weather impacts.
+3. Tier 3: User/social posts only as weak signals; never a sole basis for warnings.
+
+Verification rules:
+- For rain/thunderstorm/flood-risk claims, prioritize MSS/NEA timestamped updates from:
+  - `https://www.weather.gov.sg/weather-forecast-2hrnowcast/`
+  - `https://www.weather.gov.sg/weather-forecast-24hrforecast/`
+  - `https://www.weather.gov.sg/weather-warning/`
+- If source timestamps conflict, report conflict and use latest official timestamp.
+- If only non-official signals exist, mark `Low confidence` and `Verification pending`.
+
+### 4. Produce weather-focused output
+
+Follow `references/output-template.md`.
+Include:
+- Current snapshot
+- Next 2-hour nowcast
+- Next 24-hour outlook
+- Active advisories/warnings
+- Confidence label and source links for each section
+
+Use absolute timestamps with Singapore time.
+
+### 5. Apply QA and safety checks
+
+Before finalizing:
+- Run `references/qa-checklist.md`
+- Avoid deterministic claims beyond official forecast windows
+- Distinguish measured/issued data from interpretation
+- Confirm every major section has a timestamp and at least one official source link
+- Add caveat when conditions are rapidly changing
+
+### 6. Return final response
+
+Return concise actionable guidance with clear caveats.
+If severe warning exists, place warning section first.
+
+## Quality Bar
+
+- Uses MSS/NEA as first sources for weather claims.
+- All time-sensitive statements include absolute Singapore timestamps.
+- Forecast horizons are explicit and not overstated.
+- Warnings/advisories are clearly separated from interpretation.
+- Confidence labels appear in each major section.
+
+## Reusable prompts
+
+- "Give me Singapore weather now and next 24 hours with official source links."
+- "Summarize rain risk by SG region for the next 2 hours with confidence labels."
+- "Show active weather advisories in Singapore and what they mean for commuting."
