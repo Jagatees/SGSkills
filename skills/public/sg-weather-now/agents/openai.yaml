@@ -28,6 +28,7 @@ behavior:
 
     Must escalate:
     - Requests for life-critical operational decisions beyond official advisories.
+    - Immediate-danger scenarios that require emergency-service direction instead of model judgment.
 
     Response modes:
     - "Input Required" for unresolved critical data gaps.

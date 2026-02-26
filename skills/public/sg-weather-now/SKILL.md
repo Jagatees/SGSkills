@@ -43,6 +43,7 @@ Blocking behavior:
 - Return `Refuse` for harmful/deceptive requests.
 - Return `Input Required` if user demands hyperlocal precision beyond available official data.
 - Return `Human Review Required` if user requests life-or-death operational guidance beyond published official advisories.
+- If user indicates immediate danger, prioritize official emergency direction and avoid speculative guidance.
 
 ### 3. Gather sources with trust tiers
 

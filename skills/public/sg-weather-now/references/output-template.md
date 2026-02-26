@@ -37,4 +37,7 @@ Facts vs inference:
 
 Caveat:
 - <rapidly changing conditions or verification pending notes>
+
+Emergency note (only when applicable):
+- <If immediate danger is present, direct to official emergency channels and avoid speculative instructions>
 ```
