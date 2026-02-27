@@ -3,6 +3,8 @@ name: sg-hdb-bto-announcements
 description: Explain Singapore HDB BTO launches and application steps using official sources, clear process stages, and confidence labels.
 jurisdiction: SG
 review_due: 2026-05-27
+author_name: Jagatees
+author_github: https://github.com/Jagatees
 ---
 
 # SG HDB BTO Announcements

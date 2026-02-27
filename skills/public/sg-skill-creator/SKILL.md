@@ -1,6 +1,8 @@
 ---
 name: sg-skill-creator
 description: Create new Singapore-first skills with consistent structure, trusted-source rules, confidence labels, and website-ready metadata.
+author_name: Jagatees
+author_github: https://github.com/Jagatees
 ---
 
 # SG Skill Creator
@@ -66,6 +68,8 @@ For every new skill, define:
 - Required frontmatter safety metadata:
   - `jurisdiction: SG`
   - `review_due: YYYY-MM-DD` (set to publish date + 90 days)
+  - `author_name: <display name>`
+  - `author_github: https://github.com/<handle>`
 - Top-level sections: Overview, Workflow, Quality Bar, Reusable prompts
 - Explicit source and verification rules (where relevant)
 - Confidence and caveat behavior (where relevant)

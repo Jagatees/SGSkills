@@ -3,6 +3,8 @@ name: sg-weather-now
 description: Provide Singapore weather nowcasts and advisories using official sources, absolute timestamps, and confidence labels.
 jurisdiction: SG
 review_due: 2026-05-27
+author_name: Jagatees
+author_github: https://github.com/Jagatees
 ---
 
 # SG Weather Now

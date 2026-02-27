@@ -16,6 +16,9 @@ Thanks for contributing to Singapore Skills.
    - `SKILL.md`
    - `agents/openai.yaml`
    - `references/` (at least output template + QA checklist)
+   - In `SKILL.md` frontmatter, add contributor credit:
+     - `author_name: <display name>`
+     - `author_github: https://github.com/<handle>`
 3. Do not hand-write ports:
    - Claude/Gemini/Universal ports are generated from `SKILL.md`
    - CI auto-syncs ports after merge to `main`
@@ -45,4 +48,5 @@ Thanks for contributing to Singapore Skills.
 - [ ] Skill runs end-to-end with a realistic prompt
 - [ ] QA checklist exists and is followed
 - [ ] Source skill files are complete (`SKILL.md`, `agents/openai.yaml`, `references/`)
+- [ ] Contributor credit metadata exists in `SKILL.md` (`author_name`, `author_github`)
 - [ ] Docs updated
