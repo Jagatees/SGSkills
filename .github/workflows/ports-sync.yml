@@ -1,0 +1,70 @@
+name: Sync Skill Ports
+
+on:
+  pull_request:
+    paths:
+      - "skills/public/**"
+      - "ports/scripts/convert-skill.sh"
+      - ".github/workflows/ports-sync.yml"
+  push:
+    branches:
+      - main
+    paths:
+      - "skills/public/**"
+      - "ports/scripts/convert-skill.sh"
+      - ".github/workflows/ports-sync.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  validate:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Generate ports
+        run: |
+          chmod +x ports/scripts/convert-skill.sh
+          ./ports/scripts/convert-skill.sh all
+
+      - name: Show generated changes
+        run: |
+          if git diff --quiet -- ports; then
+            echo "Ports already in sync."
+          else
+            echo "Ports will be auto-synced after merge to main."
+            git status --short -- ports
+          fi
+
+  sync-on-main:
+    if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Generate ports
+        run: |
+          chmod +x ports/scripts/convert-skill.sh
+          ./ports/scripts/convert-skill.sh all
+
+      - name: Commit and push generated ports if changed
+        run: |
+          if git diff --quiet -- ports; then
+            echo "No port updates to commit."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add ports
+          git commit -m "chore: sync generated ports"
+          git fetch origin main
+          git rebase origin/main
+          git push origin HEAD:main

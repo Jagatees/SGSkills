@@ -16,11 +16,13 @@ Thanks for contributing to Singapore Skills.
    - `SKILL.md`
    - `agents/openai.yaml`
    - `references/` (at least output template + QA checklist)
-3. Add portability adapters if needed:
-   - Claude command
-   - Gemini command
-   - Universal prompt
-4. Update docs:
+3. Do not hand-write ports:
+   - Claude/Gemini/Universal ports are generated from `SKILL.md`
+   - CI auto-syncs ports after merge to `main`
+4. (Optional local preview) Generate ports locally:
+   - `./ports/scripts/convert-skill.sh <skill-name>`
+   - or `./ports/scripts/convert-skill.sh all`
+5. Update docs:
    - `README.md` (if needed)
    - `docs/CHANGELOG.md`
    - `docs/ROADMAP.md` (optional)
@@ -42,5 +44,5 @@ Thanks for contributing to Singapore Skills.
 
 - [ ] Skill runs end-to-end with a realistic prompt
 - [ ] QA checklist exists and is followed
-- [ ] Ports updated (or intentionally deferred with note)
+- [ ] Source skill files are complete (`SKILL.md`, `agents/openai.yaml`, `references/`)
 - [ ] Docs updated

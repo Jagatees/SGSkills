@@ -14,7 +14,7 @@ Usage:
   ./ports/scripts/convert-skill.sh <skill-name|all>
 
 Examples:
-  ./ports/scripts/convert-skill.sh sg-news-brief
+  ./ports/scripts/convert-skill.sh sg-weather-now
   ./ports/scripts/convert-skill.sh all
 USAGE
 }
@@ -27,7 +27,11 @@ fi
 target="$1"
 
 list_skills() {
-  find "${SKILLS_DIR}" -mindepth 1 -maxdepth 1 -type d -exec basename {} \; | sort
+  find "${SKILLS_DIR}" -mindepth 2 -maxdepth 2 -type f -name "SKILL.md" \
+    | while IFS= read -r path; do
+        basename "$(dirname "${path}")"
+      done \
+    | sort
 }
 
 extract_description() {
