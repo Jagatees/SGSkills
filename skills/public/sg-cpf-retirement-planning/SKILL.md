@@ -1,6 +1,8 @@
 ---
 name: sg-cpf-retirement-planning
 description: Help Singaporeans navigate CPF schemes, optimize retirement savings, and plan for retirement adequacy
+author_name: Danish Khalled
+author_github: https://github.com/ishnad
 ---
 
 # CPF & Retirement Planning Skill
