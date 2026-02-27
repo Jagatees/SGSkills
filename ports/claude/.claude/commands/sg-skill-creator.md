@@ -71,6 +71,7 @@ For every new skill, define:
 - Required frontmatter safety metadata:
   - `jurisdiction: SG`
   - `review_due: YYYY-MM-DD` (set to publish date + 90 days)
+- Optional contributor metadata (recommended for cleaner credits):
   - `author_name: <display name>`
   - `author_github: https://github.com/<handle>`
 - Top-level sections: Overview, Workflow, Quality Bar, Reusable prompts
