@@ -24,6 +24,12 @@ Examples currently included:
 
 As new Singapore-context skills are added, they are part of this same collection.
 
+To quickly list current source skills:
+
+```bash
+find skills/public -mindepth 2 -maxdepth 2 -type f -name "SKILL.md" | sed 's|/SKILL.md||' | sort
+```
+
 ## Repo structure
 
 ```text
@@ -34,9 +40,43 @@ skills/public/<skill-name>/
 
 ports/
   install.sh
+  install-from-github.sh
+  scripts/convert-skill.sh
   README.md
   universal/
 ```
+
+## Contribution Flow (Source-Only)
+
+Contributors should create or update only source skill files under `skills/public/<skill-name>/`.
+
+Required files:
+- `SKILL.md`
+- `agents/openai.yaml`
+- `references/*`
+
+Optional frontmatter (recommended for clearer website credits):
+- `author_name`
+- `author_github`
+
+Do not manually maintain `ports/claude`, `ports/gemini`, or `ports/universal` files in PRs.
+Those are generated from source.
+
+Full contributor guide: `CONTRIBUTING.md`.
+
+## Automation Flow
+
+This repo auto-handles portability ports:
+
+1. Pull request touching `skills/public/**`
+- Workflow `ports-sync.yml` runs validation and regenerates ports in CI.
+
+2. Merge/push to `main`
+- Same workflow regenerates ports and auto-commits changes under `ports/` when needed.
+
+3. Website sync (separate repo)
+- `SGSkills-Website` syncs this repo into `vendor/SGSkills` and updates website metadata.
+- This is configured in `SGSkills-Website/.github/workflows/sync-sgskills.yml`.
 
 ## Install for Codex
 
@@ -147,6 +187,8 @@ When contributing:
 - keep workflows testable and source-driven
 - include references/checklists for quality control
 - avoid uncited claims and speculative logic
+
+For end-to-end contribution steps, use `CONTRIBUTING.md`.
 
 ## License
 
