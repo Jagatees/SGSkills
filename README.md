@@ -21,6 +21,7 @@ Examples currently included:
 - `sg-skill-creator`
 - `sg-weather-now`
 - `sg-hdb-bto-announcements`
+- `sgcarmart`
 
 As new Singapore-context skills are added, they are part of this same collection.
 
@@ -89,6 +90,8 @@ cp -R skills/public/sg-skill-creator ~/.codex/skills/
 cp -R skills/public/sg-weather-now ~/.codex/skills/
 # or
 cp -R skills/public/sg-hdb-bto-announcements ~/.codex/skills/
+# or
+cp -R skills/public/sgcarmart ~/.codex/skills/
 ```
 
 ### Install all public skills
@@ -114,6 +117,7 @@ Single-skill variants for copy buttons:
 curl -fsSL https://raw.githubusercontent.com/Jagatees/SGSkills/main/ports/install-from-github.sh | bash -s -- sg-skill-creator
 curl -fsSL https://raw.githubusercontent.com/Jagatees/SGSkills/main/ports/install-from-github.sh | bash -s -- sg-weather-now
 curl -fsSL https://raw.githubusercontent.com/Jagatees/SGSkills/main/ports/install-from-github.sh | bash -s -- sg-hdb-bto-announcements
+curl -fsSL https://raw.githubusercontent.com/Jagatees/SGSkills/main/ports/install-from-github.sh | bash -s -- sgcarmart
 ```
 
 ## Example prompts
@@ -121,6 +125,7 @@ curl -fsSL https://raw.githubusercontent.com/Jagatees/SGSkills/main/ports/instal
 - `Use $sg-weather-now and summarize Singapore weather now, next 2 hours, and next 24 hours with confidence labels and official source links.`
 - `Use $sg-skill-creator to create a new Singapore-first skill with trusted-source rules, confidence labels, and website-ready metadata.`
 - `Use $sg-hdb-bto-announcements and explain the latest BTO process in simple steps with official source links.`
+- `Use $sgcarmart to compare 5 Singapore used-car listings with value signals, risk flags, and negotiation points.`
 
 ## Cross-platform ports
 
@@ -153,6 +158,7 @@ Regenerate Claude + Gemini + Universal adapters from source skills:
 ./ports/scripts/convert-skill.sh all
 # or one skill
 ./ports/scripts/convert-skill.sh sg-hdb-bto-announcements
+./ports/scripts/convert-skill.sh sgcarmart
 ```
 
 Ports are generated from source skills. Contributors should update `skills/public/<skill>/` only; CI auto-syncs ports on `main`.

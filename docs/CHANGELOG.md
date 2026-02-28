@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-02-28
+
+### sgcarmart
+
+- Added new `sgcarmart` public skill for Singapore used-car listing analysis and comparison.
+- Added skill workflow covering intake, affordability framing, extraction fields, ranking logic, and confidence handling.
+- Added required references (`output-template.md`, `qa-checklist.md`) plus source-map, intake, safety assumptions, and review contacts.
+- Added OpenAI agent metadata for the new skill.
+
 ## 2026-02-21
 
 ### sg-govtech-announcement-scanner
