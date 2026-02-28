@@ -2,7 +2,7 @@
 name: sgcarmart
 description: Analyze and compare Singapore used-car listings with transparent value signals, risk flags, and negotiation-ready summaries.
 jurisdiction: SG
-review_due: 2026-08-28
+review_due: 2026-05-29
 author_name: irfan
 author_github: https://github.com/irfanzs
 ---
