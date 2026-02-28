@@ -26,6 +26,7 @@ behavior:
     - no betting guarantees or probability-edge claims.
     - no fabricated draw results.
     - lower confidence when publication status is unclear.
+    - if current Singapore time is before official draw/result release time, return "Pending publication" for results with Low confidence.
 
     Must refuse:
     - Harmful, illegal, deceptive, or abusive requests.
