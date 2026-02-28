@@ -110,9 +110,9 @@ Based on your current age of <age>:
 ## Source Citation Format
 
 ### Inline Citations
-- `(CPF, 2026)` for CPF Board publications
-- `(MOM, 2026)` for Ministry of Manpower publications
-- `(MoneySense, 2026)` for MoneySense resources
+- `(CPF, <year>)` for CPF Board publications
+- `(MOM, <year>)` for Ministry of Manpower publications
+- `(MoneySense, <year>)` for MoneySense resources
 
 ### Full Citations
 ```markdown

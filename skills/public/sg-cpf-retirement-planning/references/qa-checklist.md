@@ -19,7 +19,7 @@ Before finalizing any response, verify all items below:
 - [ ] Milestone ages are correct (55, 65, 70)
 
 ### Formatting
-- [ ] Absolute dates used (e.g., "from 1 January 2026")
+- [ ] Absolute dates used (e.g., "from 1 January [YYYY]")
 - [ ] Confidence labels applied to all claims
 - [ ] Currency values formatted consistently (S$ or $)
 - [ ] Tables properly formatted with headers

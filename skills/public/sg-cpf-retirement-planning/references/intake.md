@@ -37,9 +37,9 @@ This skill provides CPF retirement planning guidance for Singapore users. It hel
 ### Source Trust Tiers
 | Tier | Domain | Usage |
 |------|--------|-------|
-| Tier 1 (Primary) | cpf.gov.sg, mom.gov.sg, moneysense.gov.sg | Authoritative; cite directly |
-| Tier 2 (Secondary) | hdb.gov.sg, sgpc.gov.sg | Supporting; cite when relevant |
-| Tier 3 (Context) | .gov.sg subdomains | Background context only |
+| Tier 1 (Primary) | .gov.sg domains (including cpf.gov.sg, mom.gov.sg, moneysense.gov.sg, hdb.gov.sg, sgpc.gov.sg, mas.gov.sg) | Authoritative; cite directly |
+| Tier 2 (Secondary) | Official public-sector publications not on .gov.sg (if any) | Supporting; cite with context |
+| Tier 3 (Context) | Non-authoritative contextual materials (research, commentary) | Background context only; do not use for official policy values |
 | Not Trusted | Non-.gov.sg domains | Do not cite as authoritative |
 
 ### Quality Gates
@@ -47,7 +47,7 @@ This skill provides CPF retirement planning guidance for Singapore users. It hel
 - [ ] Interest rates specify floor rate or pegged rate
 - [ ] Retirement sums specify applicable year
 - [ ] Payout estimates note "projections, not guarantees"
-- [ ] Absolute dates used (e.g., "from 1 January 2026")
+- [ ] Absolute dates used (e.g., "from 1 January [YYYY]")
 - [ ] Confidence labels applied to all claims
 
 ### Freshness Requirements

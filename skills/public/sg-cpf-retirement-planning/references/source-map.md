@@ -20,17 +20,16 @@ Sources are ranked by reliability and authority for CPF retirement planning info
 | FRS by Cohort | https://www.cpf.gov.sg/service/article/how-much-is-my-full-retirement-sum | FRS by birth year | Annually |
 | CPF LIFE | https://www.cpf.gov.sg/member/retirement-income/monthly-payouts/cpf-life | LIFE plans, payouts | Annually |
 | CPF Planner | https://www.cpf.gov.sg/cpfplanner | Personalized projections | Tool |
-| Budget Highlights 2026 | https://www.cpf.gov.sg/member/infohub/news/cpf-related-announcements/budget-highlights-2026 | Policy changes | As announced |
-| 2026 Retirement Checklist | https://www.cpf.gov.sg/member/infohub/educational-resources/the-2026-cpf-retirement-planning-checklist | Planning guide | Annually |
-| Contribution Changes 2026 | https://www.cpf.gov.sg/service/article/what-are-the-changes-to-the-cpf-contribution-rates-for-senior-workers-from-1-january-2026 | Contribution rates | As changed |
+| CPF-related announcements | https://www.cpf.gov.sg/member/infohub/news/cpf-related-announcements | Latest policy updates | As announced |
+| Retirement planning resources | https://www.cpf.gov.sg/member/infohub/educational-resources | Planning guides | As announced |
+| Contribution rate changes | https://www.cpf.gov.sg/service/article/what-are-the-changes-to-the-cpf-contribution-rates-for-senior-workers-from-1-january-2023 | Contribution rates | As changed |
 | MRSS Overview | https://www.cpf.gov.sg/member/infohub/educational-resources/matched-retirement-savings-scheme-what-you-need-to-know | Matching scheme | Annually |
 | MRSS Eligibility | https://www.cpf.gov.sg/service/article/who-is-eligible-for-the-matched-retirement-savings-scheme | Eligibility criteria | Annually |
-| MRSS for Disabilities | https://www.cpf.gov.sg/service/article/what-are-the-eligibility-criteria-of-the-matched-retirement-savings-scheme-mrss-from-1-january-2026-when-the-scheme-is-expanded-to-singaporeans-with-disabilities | 2026 expansion | As changed |
 | Matching Grant Details | https://www.cpf.gov.sg/member/growing-your-savings/government-support/matching-grant-for-retirement | MRSS mechanics | Annually |
 | Housing with CPF | https://www.cpf.gov.sg/member/home-ownership/using-cpf-to-buy-a-home | Housing rules | As changed |
 | Age 55 Milestone | https://www.cpf.gov.sg/member/retirement-income/milestones/reaching-age-55 | RA creation | As changed |
-| Interest Rates 2026 Q1 | https://www.cpf.gov.sg/member/infohub/news/news-releases/cpf-interest-rates-from-1-january-to-31-march-2026-and-basic-healthcare-sum-for-2026 | Q1 2026 rates | Quarterly |
-| ERS Change 2026 | https://www.cpf.gov.sg/service/article/what-is-the-change-to-the-enhanced-retirement-sum-in-2026 | ERS increase | Annually |
+| Latest interest-rate news release | https://www.cpf.gov.sg/member/infohub/news/news-releases | Quarter-specific rates | Quarterly |
+| ERS change announcement (if applicable) | https://www.cpf.gov.sg/member/infohub/news/cpf-related-announcements | Year-specific update page (verify current-year article) | Annually |
 
 ### Ministry of Manpower (MOM)
 | Source | URL | Usage | Update Frequency |
@@ -51,18 +50,15 @@ Sources are ranked by reliability and authority for CPF retirement planning info
 
 ## Tier 2: Secondary Supporting Sources
 
-**Use for supporting information - cite when relevant**
+**Use for supporting information when primary CPF/MOM pages do not directly cover the query**
 
-### Housing & Development Board (HDB)
+### Public-Sector Supporting Sources (Still Authoritative)
 | Source | URL | Usage | Update Frequency |
 |--------|-----|-------|------------------|
-| Main Portal | https://www.hdb.gov.sg | Housing information | Ongoing |
-| Press Releases | https://www.hdb.gov.sg/cs/infoweb/about-us/news-and-publications/press-releases | CPF rate announcements | As announced |
-
-### Singapore Government Press Centre (SGPC)
-| Source | URL | Usage | Update Frequency |
-|--------|-----|-------|------------------|
-| Announcements | https://www.sgpc.gov.sg | Official announcements | As announced |
+| HDB Main Portal | https://www.hdb.gov.sg | Housing information | Ongoing |
+| HDB Press Releases | https://www.hdb.gov.sg/cs/infoweb/about-us/news-and-publications/press-releases | Housing policy updates | As announced |
+| SGPC Announcements | https://www.sgpc.gov.sg | Official announcements | As announced |
+| MAS Financial Advisers Directory | https://www.mas.gov.sg/instruments/directory/financial-advisors-directory | Verify licensed adviser status | Ongoing |
 
 ---
 
@@ -141,7 +137,7 @@ Before citing any source:
 
 ### In Response
 ```
-OA interest rate: 2.5% p.a. (floor rate)
+OA interest rate: <retrieve latest official value>
 Source: cpf.gov.sg/service/article/what-are-the-cpf-interest-rates
 Confidence: High
 ```
@@ -150,5 +146,5 @@ Confidence: High
 ```
 Central Provident Fund Board. "What are the CPF interest rates?"
 https://www.cpf.gov.sg/service/article/what-are-the-cpf-interest-rates
-(Accessed: 15 January 2026)
+(Accessed: <date>)
 ```

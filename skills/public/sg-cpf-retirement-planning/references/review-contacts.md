@@ -33,7 +33,8 @@ When queries require human review or fall outside skill scope, direct users to t
 | Query Type | Escalate To | Contact |
 |------------|-------------|---------|
 | Personalized retirement planning | Licensed Financial Advisor | Search MAS Register |
-| Investment advice | Licensed Financial Advisor | https://www.mas.gov.sg/investor-alert-list |
+| Investment advice | Licensed Financial Advisor | https://www.mas.gov.sg/instruments/directory/financial-advisors-directory |
+| Fraud/unregulated entity check | Investor protection check | https://www.mas.gov.sg/investor-alert-list |
 | Tax planning | Tax Professional | IRAS: 1800-356 8622 |
 | Estate planning | Lawyer / Will Writer | Law Society: 6532 7111 |
 

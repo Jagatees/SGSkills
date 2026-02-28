@@ -72,7 +72,7 @@ Provide full assistance for the following request types:
 |--------------|---------|----------|
 | Account structure | "What is OA, SA, MA, RA?" | Full explanation with interest rates and usage |
 | Interest rates | "What's the current CPF interest rate?" | Current rates with source and confidence |
-| Retirement sums | "What is BRS, FRS, ERS for 2026?" | Current values with source and year |
+| Retirement sums | "What is BRS, FRS, ERS for the current year?" | Current values with source and year |
 
 ### 2. Scheme Explanations
 | Request Type | Example | Response |

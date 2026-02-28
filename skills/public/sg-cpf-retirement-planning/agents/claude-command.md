@@ -7,7 +7,7 @@ Workflow:
    - Age: Ask if not provided (critical for milestones)
    - Employment: Default to employee with caveat
    - Retirement goals: Default to FRS at age 65
-   - Current year: 2026
+   - Planning year: Default to current calendar year; ask if user is planning for another year
 2. Retrieve latest CPF parameters from official sources:
    - Interest rates: https://www.cpf.gov.sg/service/article/what-are-the-cpf-interest-rates
    - Retirement sums: https://www.cpf.gov.sg/service/article/what-are-the-retirement-sums-basic-retirement-sum-brs-full-retirement-sum-frs-and-enhanced-retirement-sum-ers
@@ -17,7 +17,8 @@ Workflow:
    - Cite specific CPF web pages
    - Note effective dates for policy changes
 4. Build concise, auditable output with calculations.
-5. Use absolute dates (e.g., "from 1 January 2026") and confidence labels (High/Medium/Low).
+5. Use absolute dates (e.g., "from 1 January [YYYY]") and confidence labels (High/Medium/Low).
+6. Retrieve official numeric/policy values before citing (do not use hardcoded interest rates, retirement sums, or year-specific policy figures).
 
 Output format:
 # CPF Retirement Planning Summary

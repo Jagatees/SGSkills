@@ -106,8 +106,8 @@ This skill requires the following reference files to be consulted during executi
 
 ## Quality bar
 
-- **No uncited numeric claim** - All figures must reference official sources
-- **Absolute dates** - Use specific dates (e.g., "from 1 January 2025") not relative terms
+- **No uncited numeric claim** - All figures must be retrieved from and cited to official sources before use
+- **Absolute dates** - Use specific dates (e.g., "from 1 January [YYYY]") not relative terms
 - **Confidence labels** - Rate confidence as High/Medium/Low based on source certainty
 - **Caveats section** - Always include limitations, assumptions, and what-ifs
 
@@ -181,12 +181,7 @@ https://www.cpf.gov.sg/member/growing-your-savings/government-support/matching-g
 |--------|-------------|------------------------|
 | Matched Retirement Savings Scheme (MRSS) | Dollar-for-dollar matching for eligible seniors and persons with disabilities | Matching cap, eligibility criteria (age, RA balance threshold, disability status) |
 | Retirement Sum Topping-Up (RSTU) | Tax relief for top-ups | Tax relief limits, eligible accounts (SA/RA) |
-
-**2026 MRSS Expansion:** From 1 January 2026, MRSS is expanded to include eligible Singaporeans with disabilities of all ages.
-
-*Sources:*
-- *https://www.cpf.gov.sg/member/infohub/educational-resources/matched-retirement-savings-scheme-what-you-need-to-know*
-- *https://www.cpf.gov.sg/member/infohub/news/news-releases/more-singaporeans-eligible-for-matching-government-grants-for-cash-top-ups-to-boost-retirement-and-healthcare-savings*
+*Policy-note rule:* For any year-specific MRSS/RSTU update, retrieve the latest official announcement and cite its effective date before presenting it.
 
 ### CPF Housing Usage Impact
 
@@ -204,24 +199,19 @@ Using CPF for housing significantly impacts retirement adequacy:
 
 ### Primary Government Sources (Singapore)
 
-1. **Central Provident Fund Board (CPF) - 2026 Sources**
+1. **Central Provident Fund Board (CPF)**
    - Main portal: https://www.cpf.gov.sg
    - CPF LIFE information: https://www.cpf.gov.sg/member/retirement-income/monthly-payouts/cpf-life
-   - Interest rates (2026): https://www.cpf.gov.sg/member/infohub/news/news-releases/cpf-interest-rates-from-1-january-to-31-march-2026-and-basic-healthcare-sum-for-2026
    - Current interest rates: https://www.cpf.gov.sg/service/article/what-are-the-cpf-interest-rates
-   - Retirement sums (2026): https://www.cpf.gov.sg/service/article/what-is-the-change-to-the-enhanced-retirement-sum-in-2026
    - Current ERS: https://www.cpf.gov.sg/service/article/what-is-the-current-enhanced-retirement-sum
    - FRS by cohort: https://www.cpf.gov.sg/service/article/how-much-is-my-full-retirement-sum
    - CPF Planner tool: https://www.cpf.gov.sg/cpfplanner
-   - Budget Highlights 2026: https://www.cpf.gov.sg/member/infohub/news/cpf-related-announcements/budget-highlights-2026
-   - 2026 Retirement Planning Checklist: https://www.cpf.gov.sg/member/infohub/educational-resources/the-2026-cpf-retirement-planning-checklist
-   - CPF contribution changes 2026: https://www.cpf.gov.sg/service/article/what-are-the-changes-to-the-cpf-contribution-rates-for-senior-workers-from-1-january-2026
+   - Latest CPF-related announcements: https://www.cpf.gov.sg/member/infohub/news/cpf-related-announcements
    - Employer contribution changes: https://www.cpf.gov.sg/employer/infohub/news/cpf-related-announcements/new-contribution-rates
 
-2. **Matched Retirement Savings Scheme (MRSS) - 2026**
+2. **Matched Retirement Savings Scheme (MRSS)**
    - MRSS overview: https://www.cpf.gov.sg/member/infohub/educational-resources/matched-retirement-savings-scheme-what-you-need-to-know
-   - MRSS eligibility (2026 expansion): https://www.cpf.gov.sg/service/article/who-is-eligible-for-the-matched-retirement-savings-scheme
-   - MRSS for persons with disabilities: https://www.cpf.gov.sg/service/article/what-are-the-eligibility-criteria-of-the-matched-retirement-savings-scheme-mrss-from-1-january-2026-when-the-scheme-is-expanded-to-singaporeans-with-disabilities
+   - MRSS eligibility: https://www.cpf.gov.sg/service/article/who-is-eligible-for-the-matched-retirement-savings-scheme
    - Matching grant details: https://www.cpf.gov.sg/member/growing-your-savings/government-support/matching-grant-for-retirement
 
 3. **MoneySense (National Financial Education Programme)**
@@ -306,4 +296,4 @@ Using CPF for housing significantly impacts retirement adequacy:
    - Platform workers (CPF contribution requirements fully implemented)
    - Non-pensionable civil servants
    - Singapore Permanent Residents (different contribution rates)
-   - Persons with disabilities (expanded MRSS eligibility from 2026)
+   - Persons with disabilities (refer to latest MRSS eligibility criteria)

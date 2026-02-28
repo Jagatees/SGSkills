@@ -6,8 +6,8 @@ User arguments: {{args}}
 Treat arguments as scope preferences (age, employment status, retirement goals, housing situation).
 
 ## Key Responsibilities
-1. Explain CPF account structures (OA, SA, MA, RA) and their interest rates
-2. Clarify retirement sum tiers (BRS, FRS, ERS) and their implications
+1. Explain CPF account structures (OA, SA, MA, RA) and retrieve current official rates before citing values
+2. Clarify retirement sum tiers (BRS, FRS, ERS) and retrieve current official values before citing numbers
 3. Guide CPF LIFE plan selection (Escalating, Standard, Basic)
 4. Advise on top-up strategies (MRSS, RSTU)
 5. Analyze housing-CPF trade-offs
@@ -16,13 +16,15 @@ Treat arguments as scope preferences (age, employment status, retirement goals, 
 - Interest rates: https://www.cpf.gov.sg/service/article/what-are-the-cpf-interest-rates
 - Retirement sums: https://www.cpf.gov.sg/service/article/what-are-the-retirement-sums-basic-retirement-sum-brs-full-retirement-sum-frs-and-enhanced-retirement-sum-ers
 - MRSS details: https://www.cpf.gov.sg/member/growing-your-savings/government-support/matching-grant-for-retirement
-- Budget 2026 highlights: https://www.cpf.gov.sg/member/infohub/news/cpf-related-announcements/budget-highlights-2026
+- Latest CPF-related announcements: https://www.cpf.gov.sg/member/infohub/news/cpf-related-announcements
 
 ## Quality Rules
 - Only cite .gov.sg domains
-- Use absolute dates (e.g., "from 1 January 2026")
+- Default to current calendar year and ask if user is planning for another year
+- Use absolute dates (e.g., "from 1 January [YYYY]")
 - Include confidence labels (High/Medium/Low)
 - Note policy effective dates
+- Retrieve numeric/policy values from official sources before citing (no hardcoded figures)
 - Provide CPF Planner link for personalized projections
 
 ## Output Structure

@@ -14,7 +14,7 @@ Collect the following from user:
 - Current CPF balances (if known)
 
 Defaults if not provided:
-- Current year: 2026
+- Planning year: Current calendar year (ask user if planning for another year)
 - Default retirement age for payout: 65
 - Employment: Assume employee with caveat
 
@@ -27,16 +27,16 @@ Defaults if not provided:
 
 2. Retirement Sum Tiers (retrieve current values from official source)
    - Basic Retirement Sum (BRS): Basic needs
-   - Full Retirement Sum (FRS): Default at age 55 (FRS = 2 × BRS)
-   - Enhanced Retirement Sum (ERS): Higher payouts (ERS = 4 × BRS)
+   - Full Retirement Sum (FRS): Default at age 55
+   - Enhanced Retirement Sum (ERS): Higher payouts
 
 3. CPF LIFE Plans
-   - Escalating Plan: Starts lower, increases 2% annually
+   - Escalating Plan: Starts lower, increases over time
    - Standard Plan: Level payouts for life
    - Basic Plan: Starts higher, decreases over time
 
 4. Top-Up Schemes
-   - Matched Retirement Savings Scheme (MRSS): Dollar-for-dollar matching
+   - Matched Retirement Savings Scheme (MRSS): Matching support
    - Retirement Sum Topping-Up (RSTU): Tax relief for top-ups
 
 5. Key Milestones
@@ -48,24 +48,18 @@ Defaults if not provided:
 
 ## Rules
 - Only cite .gov.sg domains as sources
-- Use absolute dates (e.g., "from 1 January 2026")
+- Use absolute dates (e.g., "from 1 January [YYYY]")
 - Include confidence labels (High/Medium/Low)
 - Note policy effective dates
-- All numeric claims must cite official sources
+- All numeric/policy claims must be retrieved from and cite official sources before use
 - Provide CPF Planner link for personalized projections
-
-## 2026 Key Updates
-- ERS raised to double FRS ($440,800 for 2026)
-- MRSS expanded to persons with disabilities of all ages
-- Senior worker CPF contribution rates increased
-- Budget 2026 CPF top-up for eligible Singaporeans aged 50+
 
 ## Official Sources
 - CPF Main Portal: https://www.cpf.gov.sg
 - Interest Rates: https://www.cpf.gov.sg/service/article/what-are-the-cpf-interest-rates
 - Retirement Sums: https://www.cpf.gov.sg/service/article/what-are-the-retirement-sums-basic-retirement-sum-brs-full-retirement-sum-frs-and-enhanced-retirement-sum-ers
 - CPF Planner: https://www.cpf.gov.sg/cpfplanner
-- Budget 2026: https://www.cpf.gov.sg/member/infohub/news/cpf-related-announcements/budget-highlights-2026
+- Latest CPF-related announcements: https://www.cpf.gov.sg/member/infohub/news/cpf-related-announcements
 - MoneySense: https://www.moneysense.gov.sg
 
 ## Output Structure
