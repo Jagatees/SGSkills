@@ -2,49 +2,48 @@
 
 ## Escalation Required
 
-When queries require human review or fall outside skill scope, direct users to the appropriate contacts below.
+When queries require human review or fall outside this skill's scope, follow the internal routing below. This file is for **internal reviewer roles and approval routing**, not end-user contact directories.
 
 ---
 
-## Official CPF Contacts
+## Internal human-review roles and routing
 
-### CPF Board General Enquiries
-| Channel | Contact | Hours |
-|---------|---------|-------|
-| Phone | 1800-227-1188 | Mon-Fri: 8am-5:30pm |
-| Email | contactus@cpf.gov.sg | - |
-| Website | https://www.cpf.gov.sg | 24/7 (self-service) |
-| Visit | CPF Service Centres | By appointment |
+| Scenario / trigger                                                                 | Primary reviewer role         | Backup / escalation role              | Approval / notes                                                                 |
+|------------------------------------------------------------------------------------|--------------------------------|----------------------------------------|----------------------------------------------------------------------------------|
+| Complex CPF retirement/LIFE questions that cannot be answered from official docs   | CPF domain expert (skill owner) | Secondary CPF domain expert            | Domain expert confirms response accuracy or advises to direct user to CPF Board. |
+| Policy / safety concerns (e.g., borderline advice, sensitive personal situations)  | Policy & safety reviewer       | On-call safety approver               | Safety reviewer confirms compliance with content and safety guidelines.          |
+| Requests that look like personalised financial advice or tax planning              | Policy & safety reviewer       | CPF domain expert                      | Confirm we stay within educational scope; direct user to licensed professionals. |
+| Escalations where user insists on speaking to an official CPF representative       | CPF domain expert (skill owner) | Product owner / PM for this skill     | Reviewer confirms escalation and instructs agents to refer user to CPF contact.  |
+| Technical issues with the skill (wrong data, broken flows)                         | Skill engineer / maintainer    | Product owner / PM for this skill     | Engineer investigates; PM decides if skill should be temporarily disabled.       |
 
-### CPF Services Requiring Appointment
-- Retirement planning consultation
-- CPF LIFE plan selection guidance
-- Withdrawal applications
-- Account discrepancies
-
-**Book appointment**: https://www.cpf.gov.sg/member/contact-us/make-an-appointment
+**Notes**
+- Reviewer roles here are *internal* roles; map them to the appropriate people/teams in your deployment.
+- Update this table when ownership or escalation paths change.
+- Do **not** add end-user phone numbers, email addresses, or office hours to this file.
 
 ---
 
-## Specialized Queries
+## Directing users to official contacts
 
-### Financial Advisory Services
+When a conversation requires support from an official agency (e.g., CPF Board, MAS, HDB), reviewers should **refer users to the official contact pages**, not quote specific phone numbers or office hours from this file.
 
-| Query Type | Escalate To | Contact |
-|------------|-------------|---------|
-| Personalized retirement planning | Licensed Financial Advisor | Search MAS Register |
-| Investment advice | Licensed Financial Advisor | https://www.mas.gov.sg/instruments/directory/financial-advisors-directory |
-| Fraud/unregulated entity check | Investor protection check | https://www.mas.gov.sg/investor-alert-list |
-| Tax planning | Tax Professional | IRAS: 1800-356 8622 |
-| Estate planning | Lawyer / Will Writer | Law Society: 6532 7111 |
+In general:
+- For CPF account or retirement matters, direct users to the official CPF contact page:  
+  https://www.cpf.gov.sg/member/contact-us
+- For financial advisory licensing or adviser checks, direct users to MAS resources:  
+  - Financial advisers directory: https://www.mas.gov.sg/instruments/directory/financial-advisors-directory  
+  - Investor Alert List: https://www.mas.gov.sg/investor-alert-list
+- For housing-related matters (e.g., HDB purchases, housing grants), direct users to HDB's official site:  
+  https://www.hdb.gov.sg
+- For tax matters, refer users to IRAS' official site:  
+  https://www.iras.gov.sg
+- For legal/estate-planning issues, refer users to the Law Society of Singapore or qualified legal professionals via their official sites.
 
-**MAS Financial Advisers Register**: https://www.mas.gov.sg/instruments/directory/financial-advisors-directory
+The exact wording used to direct users should:
+- Stay within this skill's permitted scope (no personalised financial or legal advice).
+- Encourage users to rely on the latest information from the agencies' official websites.
 
-### Housing-Related CPF Queries
-
-| Query Type | Escalate To | Contact |
-|------------|-------------|---------|
-| HDB purchase with CPF | HDB | 1800-866-3066 |
+---
 | CPF housing grants | HDB | https://www.hdb.gov.sg |
 | Property pledge matters | CPF Board | 1800-227-1188 |
 | Resale flat CPF refund | CPF Board | 1800-227-1188 |

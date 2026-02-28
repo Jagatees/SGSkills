@@ -48,9 +48,9 @@ Before finalizing any response, verify all items below:
 |-----------|-----------------|---------------------|
 | OA Interest Rate | cpf.gov.sg | Check interest rate page |
 | SA/MA/RA Interest Rate | cpf.gov.sg | Check interest rate page |
-| BRS | cpf.gov.sg | Check retirement sums page |
-| FRS | cpf.gov.sg | Should equal 2 × BRS |
-| ERS | cpf.gov.sg | Should equal 4 × BRS |
+| BRS | cpf.gov.sg | Check retirement sums page (applicable year) |
+| FRS | cpf.gov.sg | Check retirement sums page (applicable year) |
+| ERS | cpf.gov.sg | Check retirement sums page (applicable year) |
 
 ### For Recommendation Quality
 - [ ] Recommendations are actionable

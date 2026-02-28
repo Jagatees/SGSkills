@@ -3,6 +3,8 @@ name: sg-cpf-retirement-planning
 description: Help Singaporeans navigate CPF schemes, optimize retirement savings, and plan for retirement adequacy
 author_name: Danish Khalled
 author_github: https://github.com/ishnad
+jurisdiction: SG
+review_due: 2025-12-31
 ---
 
 # CPF & Retirement Planning Skill
@@ -28,7 +30,7 @@ This skill requires the following reference files to be consulted during executi
 | `output-template.md` | Response structure and formatting | Every response generation |
 | `qa-checklist.md` | Quality verification checklist | Before finalizing any response |
 | `review-contacts.md` | Escalation contacts | When human review required |
-| `safety-assumptions.md` | Safety rules, data minimization, escalation triggers | Every query - safety gates |
+| `safety-assumptions` | Safety rules, data minimization, escalation triggers | Every query - safety gates |
 | `safety-evals.md` | Refusal, escalation, and answer decision logic | Every query - response routing |
 | `source-map.md` | Source trust tiers and verification | Every data retrieval |
 
@@ -144,9 +146,9 @@ https://www.cpf.gov.sg/service/article/what-are-the-retirement-sums-basic-retire
 
 | Tier | Description | How to Retrieve |
 |------|-------------|------------------|
-| Basic Retirement Sum (BRS) | Basic needs in retirement | Fetch from official source |
-| Full Retirement Sum (FRS) | Default amount at age 55 | FRS = 2 × BRS (fetch BRS first) |
-| Enhanced Retirement Sum (ERS) | Higher monthly payouts | ERS = 4 × BRS (fetch BRS first) |
+| Basic Retirement Sum (BRS) | Basic needs in retirement | Fetch BRS for the applicable cohort/year from official source |
+| Full Retirement Sum (FRS) | Default amount at age 55 | Fetch FRS for the applicable cohort/year from official source (do not derive from BRS) |
+| Enhanced Retirement Sum (ERS) | Higher monthly payouts | Fetch ERS for the applicable cohort/year from official source (do not derive from BRS) |
 
 *Note: Retirement sums are adjusted annually and announced during Budget. Always use the official CPF source for current values.*
 
@@ -254,7 +256,7 @@ Using CPF for housing significantly impacts retirement adequacy:
    - Need for stable income (Standard Plan)
    - Bequest intentions (Basic Plan)
 3. Provide CPF LIFE Estimator link
-4. Note that plan choice can be changed anytime before age 80
+4. Highlight that CPF LIFE plan choice rules (including if/when they can be changed) are determined by CPF and may change; instruct users to verify the latest rules on the official CPF website (cpf.gov.sg)
 5. **Confidence: Medium** (depends on personal circumstances)
 
 ### Query: "Should I use my CPF OA to pay for my house?"

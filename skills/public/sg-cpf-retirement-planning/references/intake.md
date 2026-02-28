@@ -81,9 +81,4 @@ This skill provides CPF retirement planning guidance for Singapore users. It hel
 - Edge cases not covered by official guidance
 
 ### Governance Metadata
-```yaml
-jurisdiction: SG
-review_due: 2026-12-31
-risk_tier: MEDIUM
-data_classification: PUBLIC
-```
+Governance metadata (including `jurisdiction`, `review_due`, risk tier, and data classification) is defined in the `SKILL.md` frontmatter and must be treated as the single source of truth.
