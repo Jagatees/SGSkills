@@ -9,4 +9,5 @@
 - [ ] Facts and inference are separated.
 - [ ] No betting-advice or guaranteed-win language appears.
 - [ ] Publication status is assessed and stated.
+- [ ] Publication status basis is explicit (official results-page presence/absence, or cited official schedule/announcement).
 - [ ] Verification pending note is present when publication cannot be confirmed.
