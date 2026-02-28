@@ -16,10 +16,10 @@ Category Results (A-E):
 | Category | Quota Premium (S$) | Quota | Bids Received | Success Rate | Change vs Previous |
 |---|---:|---:|---:|---:|---:|
 | A | <value or N/A> | <...> | <...> | <...> | <+/-value or N/A> |
-| B | ... |
-| C | ... |
-| D | ... |
-| E | ... |
+| B | <value or N/A> | <...> | <...> | <...> | <+/-value or N/A> |
+| C | <value or N/A> | <...> | <...> | <...> | <+/-value or N/A> |
+| D | <value or N/A> | <...> | <...> | <...> | <+/-value or N/A> |
+| E | <value or N/A> | <...> | <...> | <...> | <+/-value or N/A> |
 
 Key Changes:
 - <largest movement and affected category>

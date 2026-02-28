@@ -1,8 +1,8 @@
 # Source Map: SG Lottery Results
 
 ## Tier 1 (primary)
-- Singapore Pools official 4D results pages
-- Singapore Pools official TOTO results pages
+- Singapore Pools official 4D results page: https://www.singaporepools.com.sg/en/product/sr/Pages/4d_results.aspx
+- Singapore Pools official TOTO results page: https://www.singaporepools.com.sg/en/product/sr/Pages/toto_results.aspx
 
 ## Tier 2
 - Official Singapore Pools announcements on draw schedules, publication delays, and exceptions

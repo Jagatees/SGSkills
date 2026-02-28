@@ -25,8 +25,8 @@ behavior:
     - jurisdiction: SG context only.
     - no betting guarantees or probability-edge claims.
     - no fabricated draw results.
-    - lower confidence when publication status is unclear.
-    - if current Singapore time is before official draw/result release time, return "Pending publication" for results with Low confidence.
+    - lower confidence when publication status is unclear, and explain why.
+    - only mark results as "Pending publication" when supported by official signals: (a) results are absent on the official Singapore Pools results page after checking, or (b) an official Singapore Pools schedule/announcement states a future release time.
 
     Must refuse:
     - Harmful, illegal, deceptive, or abusive requests.
