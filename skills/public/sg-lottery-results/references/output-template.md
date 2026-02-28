@@ -10,6 +10,7 @@ Scope: <4D | TOTO | both> (<latest draw | specific draw date>)
 - Draw date: <YYYY-MM-DD or "Not published yet">
 - Draw number: <value if available>
 - Winning numbers: <official values or "Pending publication">
+- Publication status: <Published | Pending publication | Verification pending>
 - Confidence: <High|Medium|Low>
 - Source: <https://...>
 
@@ -17,6 +18,7 @@ TOTO:
 - Draw date: <YYYY-MM-DD or "Not published yet">
 - Draw number: <value if available>
 - Winning numbers: <official values or "Pending publication">
+- Publication status: <Published | Pending publication | Verification pending>
 - Confidence: <High|Medium|Low>
 - Source: <https://...>
 

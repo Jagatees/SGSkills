@@ -60,7 +60,8 @@ Verification rules:
 - For winning numbers and draw metadata, use official published results.
 - If sources conflict, prefer Singapore Pools and state conflict.
 - If latest result is not published yet, mark `Low confidence` and `Verification pending`.
-- If current Singapore time is before the official draw/result release time for the requested draw, output `Pending publication` and set product confidence to `Low`.
+- If official results for the requested draw are absent on the Singapore Pools results page after checking, output `Pending publication` and set product confidence to `Low`.
+- If using time-based gating, cite an explicit official Singapore Pools schedule/announcement for that draw and include that source in output.
 
 ### 4. Produce lottery-results output
 
