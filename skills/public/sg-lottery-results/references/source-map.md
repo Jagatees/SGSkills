@@ -6,6 +6,7 @@
 
 ## Tier 2
 - Official Singapore Pools announcements on draw schedules, publication delays, and exceptions
+- Singapore Pools lottery draw schedule: https://online.singaporepools.com/en/lottery/lottery-draws
 
 ## Tier 3 (supporting only)
 - Media summaries or community reposts of result numbers
