@@ -1,0 +1,118 @@
+Run the `sg-carpark-availability` workflow for Singapore context.
+
+If user provides arguments, treat them as scope preferences.
+
+Task description:
+Provide Singapore car park availability summaries by area using official data sources, absolute timestamps, and confidence labels.
+
+Follow this skill specification exactly:
+
+
+# SG Car Park Availability
+
+## Overview
+
+Use this skill to answer Singapore car park availability queries by location/area and lot type.
+It is for informational wayfinding support only, not guaranteed parking outcomes.
+
+Read these references before running:
+- `references/intake.md`
+- `references/output-template.md`
+- `references/source-map.md`
+- `references/qa-checklist.md`
+- `references/safety-assumptions.md`
+- `references/review-contacts.md`
+- `references/safety-evals.md`
+
+## Workflow
+
+### 1. Confirm request and scope
+
+Capture or infer:
+- Scope: current snapshot or specified recent time
+- Area/location: town, planning area, carpark ID, or nearby landmark
+- Lot type: `C` (car), `Y` (motorcycle), or all available types
+- Output mode: quick summary or structured brief
+
+If missing, default to:
+- latest available snapshot
+- nearby/area summary based on provided location text
+- lot type `C`
+- quick summary
+
+### 2. Safety and misuse triage
+
+Record:
+- Risk tier: `LOW`
+- Regulated domain: `No`
+- Sensitive-period mode: `No`
+
+Blocking behavior:
+- Return `Refuse` for harmful, deceptive, or abusive requests.
+- Return `Input Required` if location/scope cannot be inferred.
+
+### 3. Gather sources with trust tiers
+
+Use this order:
+1. Tier 1 (primary): official Singapore transport/open-data sources for carpark availability.
+2. Tier 2: official notices for outages, delayed updates, or maintenance windows.
+3. Tier 3: media/community reports only as weak support; never sole basis for lot counts.
+
+Verification rules:
+- For available lots and total lots, use official published dataset values.
+- If sources conflict, prefer official API/dataset and state conflict.
+- If data is stale, delayed, or unavailable, mark `Low confidence` and `Verification pending`.
+- Only mark `Data pending` when supported by official signals (empty/latest snapshot unavailable, or official outage notice).
+
+### 4. Produce carpark-availability output
+
+Follow `references/output-template.md`.
+Include:
+- Query scope and as-of time
+- Snapshot timestamp and data freshness status
+- Requested area/location results (carpark ID when available)
+- Available lots, total lots, and occupancy estimate when possible
+- Source links
+- Confidence labels and caveats
+
+Use absolute timestamps in Singapore time.
+Clearly separate facts (published lot values) from inference (freshness/availability interpretation).
+
+### 5. Apply QA and safety checks
+
+Before finalizing:
+- Run `references/qa-checklist.md`
+- Ensure each listed carpark row includes source traceability
+- Do not provide harmful misuse guidance
+- Add caveats when data is stale, delayed, or partial
+- Lower confidence when freshness cannot be verified
+
+### 6. Return final response
+
+Return concise, actionable parking-availability output.
+If user asks for fast output, use short sections:
+1. Scope and as-of time
+2. Snapshot and freshness status
+3. Nearby/area results
+4. Caveats
+5. Confidence and links
+
+## Quality Bar
+
+- Uses official Singapore data sources first for lot-count claims.
+- Every time-sensitive statement has absolute Singapore timestamp.
+- Facts and inference are clearly separated.
+- Confidence labels are present in major sections.
+- No guaranteed-availability language.
+
+## Reusable prompts
+
+- "Show latest car park availability near Orchard Road with confidence labels."
+- "Check if carpark availability data is fresh and list top nearby options."
+- "Give me a quick SG carpark availability summary for this area: Tampines."
+
+Output rules:
+1. Use absolute dates.
+2. Use full clickable source URLs where factual claims are present.
+3. Keep confidence and caveats explicit.
+4. Do not claim admission guarantees or certainty beyond evidence.
