@@ -110,6 +110,13 @@ Always include:
 - per-car facts, inference, confidence, source link
 - caveats and negotiation checklist
 
+Full-card format rule:
+- If at least one car is returned, keep the original `Top 5 worth-it picks` full-card structure.
+- For each returned car, include complete listing details, monthly breakdown (`Loan`, `Road tax`, `Insurance`, `Petrol`), risk flags, trust signals, and negotiation checklist.
+- Include at least 3 embedded images per car when available.
+- Do not collapse results into short bullets or summary-only format unless the user explicitly asks for brief output.
+- If only 1 to 4 cars are available, preserve the same full-card numbering and explicitly mark missing slots as unavailable due to constraints.
+
 ## Quality Bar
 
 - No uncited numeric claim.
