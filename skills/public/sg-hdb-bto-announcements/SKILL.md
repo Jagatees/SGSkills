@@ -63,6 +63,7 @@ Use this order:
 Verification rules:
 - For launch details, prioritize official pages with publication dates.
 - For eligibility or grants, link to official pages and avoid uncited rules.
+- For Deferred Income Assessment cases, state that the grant is assessed during the deferred income assessment near key collection (not at key collection).
 - If source timestamps conflict, report conflict and use latest official timestamp.
 - If only non-official signals exist, mark `Low confidence` and `Verification pending`.
 
